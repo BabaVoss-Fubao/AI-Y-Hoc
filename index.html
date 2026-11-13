@@ -20,6 +20,17 @@
 .reveal img{display:block;max-width:none;margin:0}
 .reveal p.arrow{align-self:center;font-size:40px;color:#8A94A6;line-height:1}
 .reveal .controls{color:#C8323C}
+.reveal .lbl{position:absolute;white-space:nowrap;pointer-events:none;font-size:24px;line-height:1.3;transition:opacity .4s}
+.reveal .lbl.top{z-index:1;transform:translate(-50%,-100%);font-weight:700;color:#13233A;background:rgba(255,254,251,.92);padding:4px 14px;border-radius:999px;border:1px solid #E2DED6}
+.reveal .lbl.side{transform:translate(12px,-50%);color:#4A5568;background:rgba(252,252,250,.9);padding:4px 14px;border-radius:10px}
+.reveal .lbl.side b{color:#13233A}
+.reveal .lbl.under{transform:translate(-50%,0);font-weight:600;color:#13233A}
+.reveal .lbl.status{left:0;top:0;font-size:28px;font-weight:700;padding:6px 18px;border-radius:999px;background:#FFFEFB;border:2px solid #D8DEE4;color:#13233A}
+.reveal .lbl.status.err{color:#C8323C;border-color:#C8323C}
+.reveal .lbl.status.ok,.reveal .lbl.status.done{color:#1F7A8C;border-color:#1F7A8C}
+.reveal .no3d{font-size:28px;color:#6B7280;padding:40px}
+.reveal #hook img{animation:sway 9s ease-in-out infinite;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+@keyframes sway{0%,100%{transform:perspective(1800px) rotateY(9deg) rotateX(2deg)}50%{transform:perspective(1800px) rotateY(-5deg) rotateX(-1deg)}}
 .reveal .progress{color:#C8323C;height:6px}
 </style>
 </head>
@@ -27,18 +38,14 @@
 <div class="reveal"><div class="slides">
 <section id="cover" data-background-color="#13233A">
 <div class="frame" style="background:#13233A;color:#F7F5F0;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:center;gap:36px">
-
-<div style="position:absolute;left:1280px;top:620px;width:512px;height:120px;background:#1B3250;border-radius:20px;display:flex;flex-direction:column;justify-content:center;padding:0 36px"><p style="font-size:30px;font-weight:600;color:#9FB2C4">Hỏi AI</p></div>
-<div style="position:absolute;left:1280px;top:470px;width:512px;height:120px;background:#1F7A8C;border-radius:20px;display:flex;flex-direction:column;justify-content:center;padding:0 36px"><p style="font-size:30px;font-weight:600;color:#F7F5F0">Làm cùng AI</p></div>
-<div style="position:absolute;left:1280px;top:320px;width:512px;height:120px;background:#C8323C;border-radius:20px;display:flex;flex-direction:column;justify-content:center;padding:0 36px"><p style="font-size:30px;font-weight:700;color:#F7F5F0">Giao việc cho AI</p></div>
-<div style="width:1040px;display:flex;flex-direction:column;gap:36px">
+<div class="scene3d" data-scene="stairs" data-floor="#1B3250" data-cam="12,9,16" style="position:absolute;left:1150px;top:200px;width:680px;height:680px"></div>
+<div style="width:960px;display:flex;flex-direction:column;gap:36px">
 <p style="font-size:28px;font-weight:700;color:#E8A0A5;letter-spacing:3px;text-transform:uppercase">AI thực chiến trong y khoa</p>
 <h1 style="font-size:92px;font-weight:800;line-height:1.1;color:#F7F5F0">Từ hỏi AI đến giao việc cho AI</h1>
 <p style="font-size:36px;color:#BFD0DC;line-height:1.4">Một bác sĩ không biết lập trình đã làm được gì, và kiểm như thế nào</p>
 <p style="font-size:32px;font-weight:600;color:#F7F5F0">ThS.BS Nguyễn Văn Tú</p>
 </div>
-<aside class="notes">[Đứng thẳng, nhìn hội trường, nói chậm.] “[Kính thưa — điền đúng thành phần hội trường. Nếu có GS.TS.BS Trần Quyết Tiến và TS.BS Nguyễn Duy Tân dự, kính thưa hai thầy trước, đúng thứ tự.] Kính thưa quý thầy cô, quý đồng nghiệp. Em là Nguyễn Văn Tú, bác sĩ ngoại tim mạch. Em không phải người làm công nghệ thông tin. Hôm nay em không nói về AI nói chung, vì quý thầy cô đều đã dùng. Em xin kể những việc em đã tự làm cùng AI, em kiểm chúng bằng cách nào, và AI đã làm em sai ở đâu.” [Bấm sang trang 2 ngay, không giải thích thêm.]</aside>
-
+<aside class="notes">[Đứng thẳng, nhìn hội trường, nói chậm. Mô hình ba bậc bên phải tự xoay nhẹ; không cần nhắc tới.] “[Kính thưa — điền đúng thành phần hội trường. Nếu có GS.TS.BS Trần Quyết Tiến và TS.BS Nguyễn Duy Tân dự, kính thưa hai thầy trước, đúng thứ tự.] Kính thưa quý thầy cô, quý đồng nghiệp. Em là Nguyễn Văn Tú, bác sĩ ngoại tim mạch. Em không phải người làm công nghệ thông tin. Hôm nay em không nói về AI nói chung, vì quý thầy cô đều đã dùng. Em xin kể những việc em đã tự làm cùng AI, em kiểm chúng bằng cách nào, và AI đã làm em sai ở đâu.” [Bấm sang trang 2 ngay, không giải thích thêm.]</aside>
 </div>
 </section>
 <section id="hook" data-background-color="#0E1A2B">
@@ -70,41 +77,30 @@
 </div>
 </section>
 <section id="tiers" data-background-color="#F7F5F0">
-<div class="frame" style="background:#F7F5F0;color:#13233A;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:28px">
-
+<div class="frame" style="background:#F7F5F0;color:#13233A;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:20px">
 <p style="font-size:28px;font-weight:700;color:#C8323C;letter-spacing:3px;text-transform:uppercase">Ba tầng dùng AI</p>
 <h2 style="font-size:64px;font-weight:800;line-height:1.15">Anh chị đang ở tầng nào?</h2>
-<div style="flex:1;display:flex;flex-direction:row;gap:24px;align-items:stretch">
-<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FFFEFB;padding:32px;border:1px solid #E2DED6;border-radius:24px">
-<p style="font-size:24px;font-weight:700;color:#6B7280;letter-spacing:2px;text-transform:uppercase">Tầng 1</p>
-<h3 style="font-size:40px;font-weight:800;line-height:1.2;color:#13233A">Hỏi đáp</h3>
-<p style="font-size:27px;color:#4A5568;line-height:1.45">Hỏi một câu, nhận một câu trả lời.</p>
-<div style="flex:1"></div>
-<p style="font-size:25px;color:#13233A;line-height:1.4"><b>Nhận về:</b> đoạn văn</p>
-<p style="font-size:25px;color:#13233A;line-height:1.4"><b>Kiểm:</b> đọc lại</p>
+<div style="flex:1;display:flex;flex-direction:row;gap:32px;align-items:stretch">
+<div class="scene3d" data-scene="stairs" data-labels="1" data-cam="9.5,7.6,13.5" data-floor="#D9D3C7" style="position:relative;width:980px;height:540px"></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;justify-content:center">
+<div class="fragment" data-fragment-index="0" style="display:flex;flex-direction:column;gap:6px;background:#FFFEFB;padding:22px 26px;border-left:8px solid #5E7A93;border-radius:12px">
+<h3 style="font-size:30px;font-weight:700;line-height:1.25;color:#13233A">Tầng 1 · Hỏi đáp</h3>
+<p style="font-size:24px;color:#4A5568;line-height:1.4">Nhận về đoạn văn. Kiểm: đọc lại.</p>
 </div>
-<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FFFEFB;padding:32px;border:3px solid #1F7A8C;border-radius:24px">
-<p style="font-size:24px;font-weight:700;color:#1F7A8C;letter-spacing:2px;text-transform:uppercase">Tầng 2</p>
-<h3 style="font-size:40px;font-weight:800;line-height:1.2;color:#13233A">Làm cùng</h3>
-<p style="font-size:27px;color:#4A5568;line-height:1.45">Đưa tài liệu, mẫu, bối cảnh; cùng sửa qua nhiều lượt.</p>
-<div style="flex:1"></div>
-<p style="font-size:25px;color:#13233A;line-height:1.4"><b>Nhận về:</b> bản nháp theo mẫu</p>
-<p style="font-size:25px;color:#13233A;line-height:1.4"><b>Kiểm:</b> đối chiếu tài liệu gốc</p>
+<div class="fragment" data-fragment-index="1" style="display:flex;flex-direction:column;gap:6px;background:#FFFEFB;padding:22px 26px;border-left:8px solid #1F7A8C;border-radius:12px">
+<h3 style="font-size:30px;font-weight:700;line-height:1.25;color:#13233A">Tầng 2 · Làm cùng</h3>
+<p style="font-size:24px;color:#4A5568;line-height:1.4">Nhận về bản nháp theo mẫu. Kiểm: đối chiếu tài liệu gốc.</p>
 </div>
-<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#13233A;padding:32px;border-radius:24px">
-<p style="font-size:24px;font-weight:700;color:#E8A0A5;letter-spacing:2px;text-transform:uppercase">Tầng 3</p>
-<h3 style="font-size:40px;font-weight:800;line-height:1.2;color:#F7F5F0">Giao việc</h3>
-<p style="font-size:27px;color:#BFD0DC;line-height:1.45">Giao mục tiêu; AI tự làm nhiều bước, viết và chạy mã, đọc và sửa file.</p>
-<div style="flex:1"></div>
-<p style="font-size:25px;color:#F7F5F0;line-height:1.4"><b>Nhận về:</b> sản phẩm chạy được</p>
-<p style="font-size:25px;color:#F7F5F0;line-height:1.4"><b>Kiểm:</b> nghiệm thu như một sản phẩm</p>
+<div class="fragment" data-fragment-index="2" style="display:flex;flex-direction:column;gap:6px;background:#13233A;padding:22px 26px;border-left:8px solid #C8323C;border-radius:12px">
+<h3 style="font-size:30px;font-weight:700;line-height:1.25;color:#F7F5F0">Tầng 3 · Giao việc</h3>
+<p style="font-size:24px;color:#BFD0DC;line-height:1.4">Nhận về sản phẩm chạy được. Kiểm: nghiệm thu như một sản phẩm.</p>
+</div>
 </div>
 </div>
 <p style="font-size:27px;color:#4A5568;line-height:1.4">Lên tầng cao hơn thì làm được nhiều hơn, và phần kiểm cũng nặng hơn.</p>
 <p style="position:absolute;left:128px;bottom:64px;width:1200px;font-size:24px;color:#6B7280">ThS.BS Nguyễn Văn Tú · Từ hỏi AI đến giao việc cho AI</p>
 <p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;color:#6B7280;text-align:right">04</p>
-<aside class="notes">“Em chia cách dùng AI thành ba tầng. Tầng một là hỏi đáp: hỏi một câu, nhận một câu trả lời. Tầng hai là làm cùng: mình đưa tài liệu, mẫu, bối cảnh, rồi cùng AI sửa qua nhiều lượt; kết quả là một bản nháp đúng mẫu. Tầng ba là giao việc: mình giao một mục tiêu, AI tự chia bước, tự viết và chạy mã, tự đọc và sửa file, rồi trả về một sản phẩm chạy được.” [Hỏi hội trường, giơ tay] “Xin hỏi nhanh: ai đã từng để AI tự chạy một việc hơn mười phút mà không cần nhắc?” [Chờ] “Mỗi tầng có cách kiểm khác nhau. Lên càng cao, làm được càng nhiều, và phần kiểm càng nặng. Bốn ca sau đây đều ở tầng hai và tầng ba.”</aside>
-
+<aside class="notes">[Mô hình 3D: ba bậc mọc lên khi vào trang. Mỗi lần bấm → thì một bậc sáng lên và hiện thẻ bên phải. Có thể kéo chuột để xoay.] “Em chia cách dùng AI thành ba tầng.” [Bấm →] “Tầng một là hỏi đáp: hỏi một câu, nhận một câu trả lời.” [Bấm →] “Tầng hai là làm cùng: mình đưa tài liệu, mẫu, bối cảnh, rồi cùng AI sửa qua nhiều lượt; kết quả là một bản nháp đúng mẫu.” [Bấm →] “Tầng ba là giao việc: mình giao một mục tiêu, AI tự chia bước, tự viết và chạy mã, tự đọc và sửa file, rồi trả về một sản phẩm chạy được.” [Hỏi hội trường, giơ tay] “Xin hỏi nhanh: ai đã từng để AI tự chạy một việc hơn mười phút mà không cần nhắc?” [Chờ] “Mỗi tầng có cách kiểm khác nhau. Lên càng cao, làm được càng nhiều, và phần kiểm càng nặng. Bốn ca sau đây đều ở tầng hai và tầng ba.”</aside>
 </div>
 </section>
 <section id="map" data-background-color="#EEF2F4">
@@ -399,56 +395,35 @@
 </div>
 </section>
 <section id="sys1" data-background-color="#EEF2F4">
-<div class="frame" style="background:#EEF2F4;color:#13233A;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:24px">
-
+<div class="frame" style="background:#EEF2F4;color:#13233A;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:20px">
 <p style="font-size:28px;font-weight:700;color:#C8323C;letter-spacing:3px;text-transform:uppercase">Cơ chế phía sau · 1/4</p>
 <h2 style="font-size:64px;font-weight:800;line-height:1.15">Sáu lớp của một hệ thống AI làm việc</h2>
-<div style="flex:1;display:flex;flex-direction:column;gap:10px">
-<div style="flex:1;display:flex;flex-direction:row;gap:24px;align-items:center;background:#13233A;padding:0 32px;border-radius:16px"><p style="font-size:30px;font-weight:700;color:#F7F5F0;width:300px">Con người</p><p style="font-size:26px;color:#BFD0DC">Đặt mục tiêu, duyệt, nghiệm thu, chịu trách nhiệm</p></div>
-<div style="flex:1;display:flex;flex-direction:row;gap:24px;align-items:center;background:#FCFCFA;padding:0 32px;border:1px solid #D8DEE4;border-radius:16px"><p style="font-size:30px;font-weight:700;color:#13233A;width:300px">Agent</p><p style="font-size:26px;color:#4A5568">Tự làm nhiều bước cho tới khi xong việc</p></div>
-<div style="flex:1;display:flex;flex-direction:row;gap:24px;align-items:center;background:#FCFCFA;padding:0 32px;border:1px solid #D8DEE4;border-radius:16px"><p style="font-size:30px;font-weight:700;color:#13233A;width:300px">Skill</p><p style="font-size:26px;color:#4A5568">Quy trình chuẩn viết sẵn, như một SOP</p></div>
-<div style="flex:1;display:flex;flex-direction:row;gap:24px;align-items:center;background:#FCFCFA;padding:0 32px;border:1px solid #D8DEE4;border-radius:16px"><p style="font-size:30px;font-weight:700;color:#13233A;width:300px">Công cụ, MCP</p><p style="font-size:26px;color:#4A5568">Những gì AI được phép dùng: đọc file, chạy mã, vào ứng dụng</p></div>
-<div style="flex:1;display:flex;flex-direction:row;gap:24px;align-items:center;background:#FCFCFA;padding:0 32px;border:1px solid #D8DEE4;border-radius:16px"><p style="font-size:30px;font-weight:700;color:#13233A;width:300px">Môi trường</p><p style="font-size:26px;color:#4A5568">Ứng dụng bao quanh model: chat, công cụ lập trình (harness)</p></div>
-<div style="flex:1;display:flex;flex-direction:row;gap:24px;align-items:center;background:#FCFCFA;padding:0 32px;border:1px solid #D8DEE4;border-radius:16px"><p style="font-size:30px;font-weight:700;color:#13233A;width:300px">Model</p><p style="font-size:26px;color:#4A5568">Phần đọc, suy luận và viết</p></div>
-</div>
-<p style="font-size:27px;font-weight:600;color:#13233A;line-height:1.4">Cùng một model, khác năm lớp phía trên thì ra kết quả khác hẳn.</p>
+<div class="scene3d" data-scene="layers" style="position:relative;width:1664px;height:540px"></div>
+<span class="fragment" data-fragment-index="0"></span>
+<p class="fragment" data-fragment-index="1" style="font-size:28px;font-weight:600;color:#13233A;line-height:1.4">Cùng một model, khác năm lớp phía trên thì ra kết quả khác hẳn.</p>
 <p style="position:absolute;left:128px;bottom:64px;width:1200px;font-size:24px;color:#6B7280">ThS.BS Nguyễn Văn Tú · Từ hỏi AI đến giao việc cho AI</p>
 <p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;color:#6B7280;text-align:right">16</p>
-<aside class="notes">“Câu hỏi tiếp theo: cùng dùng một AI, vì sao người làm ra được phần mềm, người chỉ nhận được vài đoạn văn? Câu trả lời nằm ở cả hệ thống, không chỉ ở model.” “Em chia thành sáu lớp, đọc từ dưới lên. Model là phần đọc, suy luận và viết; ví như một bác sĩ giỏi. Môi trường là ứng dụng bao quanh nó; ví như phòng mổ. Công cụ là những gì nó được phép dùng: đọc file, chạy mã, kết nối vào ứng dụng khác qua một chuẩn gọi là MCP; ví như dụng cụ. Skill là quy trình chuẩn viết sẵn; ví như SOP. Agent là khi nó tự làm nhiều bước tới khi xong việc. Và trên cùng là con người.” [Nhấn] “Một bác sĩ giỏi mà không có phòng mổ, không dụng cụ, không quy trình thì cũng không mổ được. Người dùng AI ở tầng một chỉ đang dùng lớp dưới cùng.”</aside>
-
+<aside class="notes">[Mô hình 3D: sáu tấm xếp chồng sát nhau. Bấm → lần 1: các lớp tách ra và hiện tên. Bấm → lần 2: chỉ còn sáng lớp Model ở đáy và lớp Con người ở đỉnh.] “Câu hỏi tiếp theo: cùng dùng một AI, vì sao người làm ra được phần mềm, người chỉ nhận được vài đoạn văn? Câu trả lời nằm ở cả hệ thống, không chỉ ở model.” [Bấm → cho các lớp tách ra] “Em chia thành sáu lớp, đọc từ dưới lên. Model là phần đọc, suy luận và viết; ví như một bác sĩ giỏi. Môi trường là ứng dụng bao quanh nó; ví như phòng mổ. Công cụ là những gì nó được phép dùng: đọc file, chạy mã, kết nối vào ứng dụng khác qua một chuẩn gọi là MCP; ví như dụng cụ. Skill là quy trình chuẩn viết sẵn; ví như SOP. Agent là khi nó tự làm nhiều bước tới khi xong việc. Và trên cùng là con người.” [Bấm → chỉ còn hai lớp sáng] [Nhấn] “Một bác sĩ giỏi mà không có phòng mổ, không dụng cụ, không quy trình thì cũng không mổ được. Người dùng AI ở tầng một chỉ đang dùng lớp dưới cùng. Và dù có đủ năm lớp, lớp trên cùng vẫn là con người.”</aside>
 </div>
 </section>
 <section id="sys2" data-background-color="#F7F5F0">
-<div class="frame" style="background:#F7F5F0;color:#13233A;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:28px">
-
+<div class="frame" style="background:#F7F5F0;color:#13233A;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:20px">
 <p style="font-size:28px;font-weight:700;color:#C8323C;letter-spacing:3px;text-transform:uppercase">Cơ chế phía sau · 2/4</p>
 <h2 style="font-size:64px;font-weight:800;line-height:1.15">Agent là một vòng lặp, không phải phép màu</h2>
-<div style="display:flex;flex-direction:row;gap:12px;align-items:stretch">
-<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#13233A;padding:26px;border-radius:20px"><p style="font-size:44px;font-weight:800;line-height:1;color:#E8A0A5">1</p><h3 style="font-size:30px;font-weight:700;line-height:1.25;color:#F7F5F0">Nhận mục tiêu</h3><p style="font-size:24px;color:#BFD0DC;line-height:1.4">Từ người giao việc</p></div>
-<p class="arrow">→</p>
-<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#FFFEFB;padding:26px;border:1px solid #E2DED6;border-radius:20px"><p style="font-size:44px;font-weight:800;line-height:1;color:#1F7A8C">2</p><h3 style="font-size:30px;font-weight:700;line-height:1.25;color:#13233A">Lập kế hoạch</h3><p style="font-size:24px;color:#4A5568;line-height:1.4">Chia việc thành bước</p></div>
-<p class="arrow">→</p>
-<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#FFFEFB;padding:26px;border:1px solid #E2DED6;border-radius:20px"><p style="font-size:44px;font-weight:800;line-height:1;color:#1F7A8C">3</p><h3 style="font-size:30px;font-weight:700;line-height:1.25;color:#13233A">Hành động</h3><p style="font-size:24px;color:#4A5568;line-height:1.4">Dùng công cụ: viết, chạy, đọc</p></div>
-<p class="arrow">→</p>
-<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#FFFEFB;padding:26px;border:1px solid #E2DED6;border-radius:20px"><p style="font-size:44px;font-weight:800;line-height:1;color:#1F7A8C">4</p><h3 style="font-size:30px;font-weight:700;line-height:1.25;color:#13233A">Xem kết quả</h3><p style="font-size:24px;color:#4A5568;line-height:1.4">Lỗi thì quay lại bước 2</p></div>
-<p class="arrow">→</p>
-<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#13233A;padding:26px;border-radius:20px"><p style="font-size:44px;font-weight:800;line-height:1;color:#E8A0A5">5</p><h3 style="font-size:30px;font-weight:700;line-height:1.25;color:#F7F5F0">Báo lại</h3><p style="font-size:24px;color:#BFD0DC;line-height:1.4">Người nghiệm thu</p></div>
-</div>
-<div style="flex:1"></div>
+<div class="scene3d" data-scene="loop" style="position:relative;width:1664px;height:420px"></div>
 <div style="display:flex;flex-direction:row;gap:24px;align-items:stretch">
-<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#FFFEFB;padding:28px;border:1px solid #E2DED6;border-radius:20px">
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#FFFEFB;padding:24px 28px;border:1px solid #E2DED6;border-radius:20px">
 <h3 style="font-size:30px;font-weight:700;line-height:1.25;color:#13233A">Vì sao làm được việc dài</h3>
-<p style="font-size:26px;color:#4A5568;line-height:1.45">Bước 2 đến 4 tự lặp nhiều lần mà không cần người nhắc.</p>
+<p style="font-size:25px;color:#4A5568;line-height:1.45">Bước 2 đến 4 tự lặp nhiều lần mà không cần người nhắc.</p>
 </div>
-<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#FFFEFB;padding:28px;border:3px solid #C8323C;border-radius:20px">
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#FFFEFB;padding:24px 28px;border:3px solid #C8323C;border-radius:20px">
 <h3 style="font-size:30px;font-weight:700;line-height:1.25;color:#C8323C">Vì sao phải giới hạn quyền</h3>
-<p style="font-size:26px;color:#4A5568;line-height:1.45">Agent làm được gì thì cũng làm sai được nấy: chỉ cho vào đúng thư mục, không cho xoá, duyệt trước thay đổi lớn.</p>
+<p style="font-size:25px;color:#4A5568;line-height:1.45">Làm được gì thì cũng làm sai được nấy: đúng thư mục, không quyền xoá, duyệt trước thay đổi lớn.</p>
 </div>
 </div>
 <p style="position:absolute;left:128px;bottom:64px;width:1200px;font-size:24px;color:#6B7280">ThS.BS Nguyễn Văn Tú · Từ hỏi AI đến giao việc cho AI</p>
 <p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;color:#6B7280;text-align:right">17</p>
-<aside class="notes">“Chữ agent nghe to tát, nhưng cơ chế rất đơn giản: một vòng lặp.” “Nó nhận mục tiêu. Nó lập kế hoạch, chia việc thành bước. Nó hành động bằng công cụ: viết mã, chạy mã, đọc file. Nó xem kết quả; nếu lỗi, nó quay lại sửa kế hoạch. Cứ thế cho tới khi xong, rồi báo lại.” “Khác biệt so với hỏi đáp là bước hai đến bước bốn tự lặp nhiều lần mà không cần mình nhắc. Phần mềm dựng hình của em ra đời từ rất nhiều vòng như vậy.” [Nhấn] “Nhưng agent làm được gì thì cũng làm sai được nấy, và làm sai rất nhanh. Vì vậy em có ba nguyên tắc: chỉ cho nó vào đúng thư mục cần làm; không cho quyền xoá; và thay đổi lớn thì bắt nó trình trước cho em duyệt. Và không bao giờ cho agent vào thư mục có hồ sơ bệnh nhân.”</aside>
-
+<aside class="notes">[Mô hình 3D tự chạy: chấm vàng đi từ “Nhận mục tiêu” vào vòng. Hai vòng đầu, tới “Xem kết quả” thì chấm hoá đỏ: lỗi, quay lại lập kế hoạch. Vòng ba đạt, chấm ra “Báo lại người nghiệm thu”. Cả chu trình khoảng 12 giây, tự lặp lại. Cứ để nó chạy trong lúc nói.] “Chữ agent nghe to tát, nhưng cơ chế rất đơn giản: một vòng lặp.” [Chỉ theo chấm vàng] “Nó nhận mục tiêu. Nó lập kế hoạch. Nó hành động bằng công cụ: viết mã, chạy mã, đọc file. Nó xem kết quả.” [Khi chấm hoá đỏ] “Lỗi, thì nó quay lại sửa kế hoạch, và chạy tiếp. Cứ thế cho tới khi đạt, rồi báo lại.” “Khác biệt so với hỏi đáp là bước hai đến bước bốn tự lặp nhiều lần mà không cần mình nhắc. Phần mềm dựng hình của em ra đời từ rất nhiều vòng như vậy.” [Nhấn] “Nhưng agent làm được gì thì cũng làm sai được nấy, và làm sai rất nhanh. Vì vậy em có ba nguyên tắc: chỉ cho nó vào đúng thư mục cần làm; không cho quyền xoá; và thay đổi lớn thì bắt nó trình trước cho em duyệt. Và không bao giờ cho agent vào thư mục có hồ sơ bệnh nhân.” [Lưu ý: điểm cuối cùng vẫn là người nghiệm thu, không phải AI.]</aside>
 </div>
 </section>
 <section id="sys3" data-background-color="#EEF2F4">
@@ -604,8 +579,10 @@
 </div></div>
 <script src="lib/reveal.js"></script>
 <script src="lib/notes/notes.js"></script>
+<script src="lib/three.min.js"></script>
+<script src="lib/scenes.js"></script>
 <script>
-Reveal.initialize({width:1920,height:1080,margin:0,center:false,hash:true,slideNumber:false,transition:'convex',backgroundTransition:'fade',plugins:[RevealNotes]});
+Reveal.initialize({width:1920,height:1080,margin:0,center:false,hash:true,slideNumber:false,transition:'convex',backgroundTransition:'fade',plugins:[RevealNotes]}).then(function(){Scenes3D.start(Reveal);});
 </script>
 </body>
 </html>
