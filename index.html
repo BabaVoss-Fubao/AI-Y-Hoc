@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Từ hỏi AI đến giao việc cho AI · ThS.BS Nguyễn Văn Tú</title>
+<meta name="author" content="ThS.BS Nguyễn Văn Tú">
+<link rel="stylesheet" href="lib/reveal.css">
+<link rel="stylesheet" href="lib/fonts.css">
+<style>
+.reveal{font-family:'Be Vietnam Pro',Arial,sans-serif}
+.reveal .slides{text-align:left}
+.reveal .slides section{padding:0}
+.reveal .frame{position:relative;width:1920px;height:1080px;box-sizing:border-box}
+.reveal .frame *{box-sizing:border-box}
+.reveal h1,.reveal h2,.reveal h3,.reveal p,.reveal ul,.reveal ol,.reveal table{margin:0}
+.reveal ul,.reveal ol{padding-left:1.2em}
+.reveal table{width:100%;border-collapse:collapse}
+.reveal th,.reveal td{line-height:1.35;padding:.45em .6em;text-align:left;vertical-align:top;border-bottom:1px solid #D8DEE4}
+.reveal img{display:block;max-width:none;margin:0}
+.reveal p.arrow{align-self:center;font-size:40px;color:#8A94A6;line-height:1}
+.reveal .controls{color:#C8323C}
+.reveal .progress{color:#C8323C;height:6px}
+</style>
+</head>
+<body>
+<div class="reveal"><div class="slides">
+<section id="cover" data-background-color="#13233A">
+<div class="frame" style="background:#13233A;color:#F7F5F0;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:center;gap:36px">
+
+<div style="position:absolute;left:1280px;top:620px;width:512px;height:120px;background:#1B3250;border-radius:20px;display:flex;flex-direction:column;justify-content:center;padding:0 36px"><p style="font-size:30px;font-weight:600;color:#9FB2C4">Hỏi AI</p></div>
+<div style="position:absolute;left:1280px;top:470px;width:512px;height:120px;background:#1F7A8C;border-radius:20px;display:flex;flex-direction:column;justify-content:center;padding:0 36px"><p style="font-size:30px;font-weight:600;color:#F7F5F0">Làm cùng AI</p></div>
+<div style="position:absolute;left:1280px;top:320px;width:512px;height:120px;background:#C8323C;border-radius:20px;display:flex;flex-direction:column;justify-content:center;padding:0 36px"><p style="font-size:30px;font-weight:700;color:#F7F5F0">Giao việc cho AI</p></div>
+<div style="width:1040px;display:flex;flex-direction:column;gap:36px">
+<p style="font-size:28px;font-weight:700;color:#E8A0A5;letter-spacing:3px;text-transform:uppercase">AI thực chiến trong y khoa</p>
+<h1 style="font-size:92px;font-weight:800;line-height:1.1;color:#F7F5F0">Từ hỏi AI đến giao việc cho AI</h1>
+<p style="font-size:36px;color:#BFD0DC;line-height:1.4">Một bác sĩ không biết lập trình đã làm được gì, và kiểm như thế nào</p>
+<p style="font-size:32px;font-weight:600;color:#F7F5F0">ThS.BS Nguyễn Văn Tú</p>
+</div>
+<aside class="notes">[Đứng thẳng, nhìn hội trường, nói chậm.] “[Kính thưa — điền đúng thành phần hội trường. Nếu có GS.TS.BS Trần Quyết Tiến và TS.BS Nguyễn Duy Tân dự, kính thưa hai thầy trước, đúng thứ tự.] Kính thưa quý thầy cô, quý đồng nghiệp. Em là Nguyễn Văn Tú, bác sĩ ngoại tim mạch. Em không phải người làm công nghệ thông tin. Hôm nay em không nói về AI nói chung, vì quý thầy cô đều đã dùng. Em xin kể những việc em đã tự làm cùng AI, em kiểm chúng bằng cách nào, và AI đã làm em sai ở đâu.” [Bấm sang trang 2 ngay, không giải thích thêm.]</aside>
+
+</div>
+</section>
+<section id="hook" data-background-color="#0E1A2B">
+<div class="frame" style="background:#0E1A2B;color:#F7F5F0;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:row;gap:56px;align-items:center">
+
+<img src="img/app-3d.jpg" alt="Hình dựng thể tích 3D tim và mạch máu lớn từ CT trong phần mềm Nội mạch 3D" style="width:853px;height:792px;object-fit:cover;border-radius:24px">
+<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:28px">
+<p style="font-size:28px;font-weight:700;color:#E8A0A5;letter-spacing:3px;text-transform:uppercase">Nội mạch 3D – Dựng hình CT</p>
+<h2 style="font-size:60px;font-weight:800;line-height:1.15;color:#F7F5F0">Người làm ra phần mềm này không biết lập trình</h2>
+<p style="font-size:30px;color:#BFD0DC;line-height:1.45">Chạy trên trình duyệt. Dùng tham khảo trước mổ tại Khoa Ngoại 1, Viện Tim TP.HCM.</p>
+<p style="font-size:24px;color:#9FB2C4;line-height:1.4">Ảnh chụp từ phần mềm, đã ẩn danh. Khi trình bày: demo sống hoặc video xoay hình.</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1200px;font-size:24px;color:#9FB2C4">ThS.BS Nguyễn Văn Tú · Từ hỏi AI đến giao việc cho AI</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;color:#9FB2C4;text-align:right">02</p>
+<aside class="notes">[DEMO SỐNG hoặc video xoay hình; ảnh trên slide là phương án dự phòng. Im lặng 10 giây đầu cho hội trường nhìn.] “Đây là hình dựng 3D tim và các mạch máu lớn từ phim CT của một ca đã ẩn danh. Phần mềm chạy ngay trên trình duyệt, tên là Nội mạch 3D. Em làm nó cho Khoa Ngoại 1 để tham khảo trước mổ.” [Dừng] “Em không biết lập trình. Toàn bộ mã do AI viết. Phần của em là nói rõ mình cần gì, và kiểm xem hình có đúng với phim gốc không.” [Dừng] “Câu hỏi em muốn trả lời hôm nay là: làm sao một bác sĩ làm được việc này, và nó đáng tin tới đâu.”</aside>
+
+</div>
+</section>
+<section id="shift" data-background-color="#C8323C" data-transition="zoom">
+<div class="frame" style="background:#C8323C;color:#F7F5F0;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;justify-content:center;gap:40px">
+
+<p style="font-size:28px;font-weight:700;color:#FFE1E3;letter-spacing:3px;text-transform:uppercase">Ý chính của buổi hôm nay</p>
+<h2 style="font-size:92px;font-weight:800;line-height:1.12;color:#FFFFFF">Điều thay đổi là cách giao việc, không phải câu trả lời hay hơn</h2>
+<p style="font-size:36px;color:#FFE1E3;line-height:1.45">Hỏi AI thì nhận một câu trả lời. Giao việc thì nhận một sản phẩm, và phải tự kiểm sản phẩm đó.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1200px;font-size:24px;color:#FFE1E3">ThS.BS Nguyễn Văn Tú · Từ hỏi AI đến giao việc cho AI</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;color:#FFE1E3;text-align:right">03</p>
+<aside class="notes">“Phần lớn chúng ta đang dùng AI như một công cụ tra cứu biết nói: mình hỏi, nó trả lời. Cách đó có ích, nhưng không làm ra được phần mềm vừa rồi.” [Dừng] [Nhấn] “Điều thay đổi trong một, hai năm gần đây là AI có thể nhận một việc trọn vẹn: tự lập kế hoạch, tự viết mã, tự chạy thử, tự sửa, rồi báo lại. Mình chuyển từ người hỏi sang người giao việc.” “Và người giao việc thì có một trách nhiệm mà người hỏi không có: nghiệm thu. Cả buổi hôm nay xoay quanh hai chữ đó: giao việc, và nghiệm thu.”</aside>
+
+</div>
+</section>
+<section id="tiers" data-background-color="#F7F5F0">
+<div class="frame" style="background:#F7F5F0;color:#13233A;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:28px">
+
+<p style="font-size:28px;font-weight:700;color:#C8323C;letter-spacing:3px;text-transform:uppercase">Ba tầng dùng AI</p>
+<h2 style="font-size:64px;font-weight:800;line-height:1.15">Anh chị đang ở tầng nào?</h2>
+<div style="flex:1;display:flex;flex-direction:row;gap:24px;align-items:stretch">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FFFEFB;padding:32px;border:1px solid #E2DED6;border-radius:24px">
+<p style="font-size:24px;font-weight:700;color:#6B7280;letter-spacing:2px;text-transform:uppercase">Tầng 1</p>
+<h3 style="font-size:40px;font-weight:800;line-height:1.2;color:#13233A">Hỏi đáp</h3>
+<p style="font-size:27px;color:#4A5568;line-height:1.45">Hỏi một câu, nhận một câu trả lời.</p>
+<div style="flex:1"></div>
+<p style="font-size:25px;color:#13233A;line-height:1.4"><b>Nhận về:</b> đoạn văn</p>
+<p style="font-size:25px;color:#13233A;line-height:1.4"><b>Kiểm:</b> đọc lại</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FFFEFB;padding:32px;border:3px solid #1F7A8C;border-radius:24px">
+<p style="font-size:24px;font-weight:700;color:#1F7A8C;letter-spacing:2px;text-transform:uppercase">Tầng 2</p>
+<h3 style="font-size:40px;font-weight:800;line-height:1.2;color:#13233A">Làm cùng</h3>
+<p style="font-size:27px;color:#4A5568;line-height:1.45">Đưa tài liệu, mẫu, bối cảnh; cùng sửa qua nhiều lượt.</p>
+<div style="flex:1"></div>
+<p style="font-size:25px;color:#13233A;line-height:1.4"><b>Nhận về:</b> bản nháp theo mẫu</p>
+<p style="font-size:25px;color:#13233A;line-height:1.4"><b>Kiểm:</b> đối chiếu tài liệu gốc</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#13233A;padding:32px;border-radius:24px">
+<p style="font-size:24px;font-weight:700;color:#E8A0A5;letter-spacing:2px;text-transform:uppercase">Tầng 3</p>
+<h3 style="font-size:40px;font-weight:800;line-height:1.2;color:#F7F5F0">Giao việc</h3>
+<p style="font-size:27px;color:#BFD0DC;line-height:1.45">Giao mục tiêu; AI tự làm nhiều bước, viết và chạy mã, đọc và sửa file.</p>
+<div style="flex:1"></div>
+<p style="font-size:25px;color:#F7F5F0;line-height:1.4"><b>Nhận về:</b> sản phẩm chạy được</p>
+<p style="font-size:25px;color:#F7F5F0;line-height:1.4"><b>Kiểm:</b> nghiệm thu như một sản phẩm</p>
+</div>
+</div>
+<p style="font-size:27px;color:#4A5568;line-height:1.4">Lên tầng cao hơn thì làm được nhiều hơn, và phần kiểm cũng nặng hơn.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1200px;font-size:24px;color:#6B7280">ThS.BS Nguyễn Văn Tú · Từ hỏi AI đến giao việc cho AI</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;color:#6B7280;text-align:right">04</p>
+<aside class="notes">“Em chia cách dùng AI thành ba tầng. Tầng một là hỏi đáp: hỏi một câu, nhận một câu trả lời. Tầng hai là làm cùng: mình đưa tài liệu, mẫu, bối cảnh, rồi cùng AI sửa qua nhiều lượt; kết quả là một bản nháp đúng mẫu. Tầng ba là giao việc: mình giao một mục tiêu, AI tự chia bước, tự viết và chạy mã, tự đọc và sửa file, rồi trả về một sản phẩm chạy được.” [Hỏi hội trường, giơ tay] “Xin hỏi nhanh: ai đã từng để AI tự chạy một việc hơn mười phút mà không cần nhắc?” [Chờ] “Mỗi tầng có cách kiểm khác nhau. Lên càng cao, làm được càng nhiều, và phần kiểm càng nặng. Bốn ca sau đây đều ở tầng hai và tầng ba.”</aside>
+
+</div>
+</section>
+<section id="map" data-background-color="#EEF2F4">
+<div class="frame" style="background:#EEF2F4;color:#13233A;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:28px">
+
+<p style="font-size:28px;font-weight:700;color:#C8323C;letter-spacing:3px;text-transform:uppercase">Bốn ca thực chiến</p>
+<h2 style="font-size:64px;font-weight:800;line-height:1.15">Mỗi ca trả lời cùng năm câu hỏi</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:20px">
+<div style="display:flex;flex-direction:column;gap:10px;background:#13233A;padding:28px;border-radius:20px"><p style="font-size:24px;font-weight:700;color:#E8A0A5">CA A</p><h3 style="font-size:34px;font-weight:700;line-height:1.2;color:#F7F5F0">Phần mềm</h3><p style="font-size:25px;color:#BFD0DC;line-height:1.4">Nội mạch 3D – Dựng hình CT</p></div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#FCFCFA;padding:28px;border:1px solid #D8DEE4;border-radius:20px"><p style="font-size:24px;font-weight:700;color:#1F7A8C">CA B</p><h3 style="font-size:34px;font-weight:700;line-height:1.2;color:#13233A">Nghiên cứu</h3><p style="font-size:25px;color:#4A5568;line-height:1.4">Đề cương, số liệu, y văn</p></div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#FCFCFA;padding:28px;border:1px solid #D8DEE4;border-radius:20px"><p style="font-size:24px;font-weight:700;color:#1F7A8C">CA C</p><h3 style="font-size:34px;font-weight:700;line-height:1.2;color:#13233A">Giảng dạy</h3><p style="font-size:25px;color:#4A5568;line-height:1.4">Ngân hàng câu hỏi, web mô phỏng</p></div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#FCFCFA;padding:28px;border:1px solid #D8DEE4;border-radius:20px"><p style="font-size:24px;font-weight:700;color:#1F7A8C">CA D</p><h3 style="font-size:34px;font-weight:700;line-height:1.2;color:#13233A">Việc lặp lại</h3><p style="font-size:25px;color:#4A5568;line-height:1.4">Hồ sơ, biểu mẫu, bài giảng</p></div>
+</div>
+<div style="flex:1"></div>
+<div style="display:flex;flex-direction:row;gap:12px;align-items:stretch">
+<p style="flex:1;font-size:26px;font-weight:600;color:#13233A;background:#FCFCFA;padding:20px;border:1px solid #D8DEE4;border-radius:16px;text-align:center">1. Vấn đề là gì</p>
+<p style="flex:1;font-size:26px;font-weight:600;color:#13233A;background:#FCFCFA;padding:20px;border:1px solid #D8DEE4;border-radius:16px;text-align:center">2. Đưa gì cho AI</p>
+<p style="flex:1;font-size:26px;font-weight:600;color:#13233A;background:#FCFCFA;padding:20px;border:1px solid #D8DEE4;border-radius:16px;text-align:center">3. Nhận lại gì</p>
+<p style="flex:1;font-size:26px;font-weight:600;color:#13233A;background:#FCFCFA;padding:20px;border:1px solid #D8DEE4;border-radius:16px;text-align:center">4. Kiểm ở đâu</p>
+<p style="flex:1;font-size:26px;font-weight:700;color:#F7F5F0;background:#C8323C;padding:20px;border-radius:16px;text-align:center">5. AI sai ở đâu</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1200px;font-size:24px;color:#6B7280">ThS.BS Nguyễn Văn Tú · Từ hỏi AI đến giao việc cho AI</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;color:#6B7280;text-align:right">05</p>
+<aside class="notes">“Em xin kể bốn ca, đều là việc em đã tự làm. Ca A là phần mềm dựng hình quý thầy cô vừa xem. Ca B là nghiên cứu khoa học. Ca C là giảng dạy. Ca D là những việc giấy tờ lặp đi lặp lại.” “Ca nào em cũng trả lời đúng năm câu: vấn đề là gì, em đưa gì cho AI, nhận lại gì, em kiểm ở đâu.” [Nhấn, chỉ ô đỏ] “Và câu thứ năm: AI đã sai ở đâu. Ca nào cũng có. Nếu ai kể về AI mà không có câu thứ năm, quý thầy cô nên nghi ngờ.”</aside>
+
+</div>
+</section>
+<section id="a1" data-background-color="#F7F5F0">
+<div class="frame" style="background:#F7F5F0;color:#13233A;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:28px">
+
+<p style="font-size:28px;font-weight:700;color:#C8323C;letter-spacing:3px;text-transform:uppercase">Ca A · Phần mềm · 1/3</p>
+<h2 style="font-size:64px;font-weight:800;line-height:1.15">Một ca mổ cần nhìn giải phẫu 3D</h2>
+<div style="flex:1;display:flex;flex-direction:row;gap:28px;align-items:stretch">
+<img src="img/app-man-hinh.jpg" alt="Màn hình phần mềm Nội mạch 3D: hình dựng thể tích ở giữa, ba mặt cắt CT gốc bên phải, thanh công cụ phía trên" style="width:980px;height:581px;object-fit:contain;background:#0E1A2B;border-radius:20px">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#FFF1D6;padding:24px;border:2px dashed #C99A3B;border-radius:20px">
+<h3 style="font-size:30px;font-weight:700;line-height:1.2;color:#13233A">Ca bệnh</h3>
+<p style="font-size:25px;color:#8A5A00;line-height:1.45">[Anh điền: loại bệnh, điều khó hình dung trên lát cắt 2D]</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#FFF1D6;padding:24px;border:2px dashed #C99A3B;border-radius:20px">
+<h3 style="font-size:30px;font-weight:700;line-height:1.2;color:#13233A">Hình 3D đã giúp gì</h3>
+<p style="font-size:25px;color:#8A5A00;line-height:1.45">[Anh điền: một điều ê-kíp thấy rõ hơn]</p>
+</div>
+<p style="font-size:24px;color:#4A5568;line-height:1.4">Giữa: hình dựng thể tích. Phải: ba mặt cắt CT gốc.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1200px;font-size:24px;color:#6B7280">ThS.BS Nguyễn Văn Tú · Từ hỏi AI đến giao việc cho AI</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;color:#6B7280;text-align:right">06</p>
+<aside class="notes">[Kể như kể một ca lâm sàng, không kể như kể công nghệ.] “Em bắt đầu từ một ca cụ thể. Bệnh nhân [loại bệnh; không nêu tên, tuổi chính xác hay mã hồ sơ]. Trên lát cắt CT hai chiều, điều khó hình dung là [điền].” “Đây là màn hình phần mềm với ca đó. Ở giữa là hình dựng thể tích, xoay và cắt được. Bên phải là ba mặt cắt CT gốc, luôn nằm cạnh hình dựng.” “Khi dựng hình 3D, ê-kíp thấy rõ hơn [điền một điều cụ thể].” [Dừng] “Em nói rõ: hình này chỉ để tham khảo. Quyết định mổ vẫn dựa trên phim gốc và hội chẩn. Nhưng nó cho thấy nhu cầu là có thật, và đó là lý do em làm phần mềm.” [Chỉ kể ca đã ẩn danh và được phép nhắc.]</aside>
+
+</div>
+</section>
+<section id="a2" data-background-color="#EEF2F4">
+<div class="frame" style="background:#EEF2F4;color:#13233A;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:28px">
+
+<p style="font-size:28px;font-weight:700;color:#C8323C;letter-spacing:3px;text-transform:uppercase">Ca A · Phần mềm · 2/3</p>
+<h2 style="font-size:64px;font-weight:800;line-height:1.15">AI viết mã, bác sĩ nghiệm thu</h2>
+<div style="display:flex;flex-direction:row;gap:12px;align-items:stretch">
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#13233A;padding:24px;border-radius:20px"><p style="font-size:24px;font-weight:700;color:#E8A0A5">BÁC SĨ</p><h3 style="font-size:28px;font-weight:700;line-height:1.25;color:#F7F5F0">Mô tả yêu cầu</h3><p style="font-size:24px;color:#BFD0DC;line-height:1.4">Cần thấy gì, dùng khi nào</p></div>
+<p class="arrow">→</p>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#FCFCFA;padding:24px;border:3px solid #1F7A8C;border-radius:20px"><p style="font-size:24px;font-weight:700;color:#1F7A8C">AI</p><h3 style="font-size:28px;font-weight:700;line-height:1.25;color:#13233A">Viết mã</h3><p style="font-size:24px;color:#4A5568;line-height:1.4">Đọc file CT, hiển thị 3D</p></div>
+<p class="arrow">→</p>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#13233A;padding:24px;border-radius:20px"><p style="font-size:24px;font-weight:700;color:#E8A0A5">BÁC SĨ</p><h3 style="font-size:28px;font-weight:700;line-height:1.25;color:#F7F5F0">Chạy trên CT mẫu</h3><p style="font-size:24px;color:#BFD0DC;line-height:1.4">So với lát cắt gốc</p></div>
+<p class="arrow">→</p>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#13233A;padding:24px;border-radius:20px"><p style="font-size:24px;font-weight:700;color:#E8A0A5">BÁC SĨ</p><h3 style="font-size:28px;font-weight:700;line-height:1.25;color:#F7F5F0">Chỉ ra chỗ sai</h3><p style="font-size:24px;color:#BFD0DC;line-height:1.4">Bằng ngôn ngữ giải phẫu</p></div>
+<p class="arrow">→</p>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#FCFCFA;padding:24px;border:3px solid #1F7A8C;border-radius:20px"><p style="font-size:24px;font-weight:700;color:#1F7A8C">AI</p><h3 style="font-size:28px;font-weight:700;line-height:1.25;color:#13233A">Sửa mã</h3><p style="font-size:24px;color:#4A5568;line-height:1.4">Rồi lặp lại vòng</p></div>
+</div>
+<div style="flex:1"></div>
+<div style="display:flex;flex-direction:row;gap:24px;align-items:stretch">
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#FCFCFA;padding:28px;border:1px solid #D8DEE4;border-radius:20px">
+<h3 style="font-size:30px;font-weight:700;line-height:1.25;color:#13233A">AI giúp viết phần mềm</h3>
+<p style="font-size:26px;color:#4A5568;line-height:1.45">Đó là vai trò của AI trong ca này.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#FFF1D6;padding:28px;border:2px dashed #C99A3B;border-radius:20px">
+<h3 style="font-size:30px;font-weight:700;line-height:1.25;color:#13233A">AI không đọc phim</h3>
+<p style="font-size:26px;color:#13233A;line-height:1.45">Khi chạy, app dựng hình theo giá trị HU: bề mặt, thể tích (VR), MIP. <span style="color:#8A5A00">[Anh xác nhận: không có mô hình học máy]</span></p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1200px;font-size:24px;color:#6B7280">ThS.BS Nguyễn Văn Tú · Từ hỏi AI đến giao việc cho AI</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;color:#6B7280;text-align:right">07</p>
+<aside class="notes">“Cách làm là một vòng lặp. Em mô tả yêu cầu bằng tiếng Việt: cần thấy cấu trúc nào, dùng trong tình huống nào. AI viết mã. Em mở thử trên một bộ CT mẫu đã ẩn danh và so với lát cắt gốc. Chỗ nào sai, em mô tả lại bằng ngôn ngữ giải phẫu, không phải ngôn ngữ lập trình. AI sửa. Rồi lặp lại, [số vòng, thời gian — anh điền nếu nhớ].” [Nhấn] “Có một điểm em muốn nói thật rõ, vì rất dễ hiểu nhầm: AI giúp em viết phần mềm. Khi phần mềm chạy, hình được dựng bằng các kỹ thuật kinh điển theo giá trị HU: dựng bề mặt, dựng thể tích và MIP; người dùng chỉnh ngưỡng, khoanh vùng, bỏ xương. [Nếu đúng, nói thêm: không có mô hình AI nào đọc phim.]” “Nói cách khác, kiến thức lập trình là của AI. Kiến thức để biết hình đúng hay sai là của bác sĩ. Thiếu vế thứ hai thì không ai nghiệm thu được sản phẩm.”</aside>
+
+</div>
+</section>
+<section id="a3" data-background-color="#F7F5F0">
+<div class="frame" style="background:#F7F5F0;color:#13233A;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:28px">
+
+<p style="font-size:28px;font-weight:700;color:#C8323C;letter-spacing:3px;text-transform:uppercase">Ca A · Phần mềm · 3/3</p>
+<h2 style="font-size:64px;font-weight:800;line-height:1.15">Kiểm bằng phim gốc, và chỗ đã sai</h2>
+<div style="flex:1;display:flex;flex-direction:row;gap:24px;align-items:stretch">
+<div style="display:flex;flex-direction:column;gap:8px">
+<img src="img/app-lat-cat.jpg" alt="Ba mặt cắt CT gốc: ngang, đứng ngang, đứng dọc" style="width:270px;height:560px;object-fit:cover;border-radius:16px">
+<p style="font-size:24px;color:#4A5568;text-align:center">Lát cắt gốc</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<img src="img/app-3d.jpg" alt="Hình dựng thể tích 3D của cùng ca" style="width:603px;height:560px;object-fit:cover;border-radius:16px">
+<p style="font-size:24px;color:#4A5568;text-align:center">Hình dựng của cùng ca</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#FFFEFB;padding:28px;border:3px solid #C8323C;border-radius:24px">
+<h3 style="font-size:30px;font-weight:700;line-height:1.25;color:#C8323C">Thứ phải soi trên hình</h3>
+<p style="font-size:25px;color:#8A5A00;line-height:1.4">[Anh xác nhận: vân bậc thang trên thành mạch; các vòng trắng là gì]</p>
+<h3 style="font-size:30px;font-weight:700;line-height:1.25;color:#C8323C">AI đã sai ở đâu</h3>
+<p style="font-size:25px;color:#8A5A00;line-height:1.4">[Anh điền một lỗi thật: mã chạy được nhưng hình không khớp]</p>
+<div style="flex:1"></div>
+<h3 style="font-size:30px;font-weight:700;line-height:1.25;color:#13233A">Giới hạn hiện tại</h3>
+<p style="font-size:25px;color:#13233A;line-height:1.4">Chưa phải thiết bị y tế. Có thước đo, nhưng chưa so sai lệch với phần mềm chuẩn.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1200px;font-size:24px;color:#6B7280">ThS.BS Nguyễn Văn Tú · Từ hỏi AI đến giao việc cho AI</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;color:#6B7280;text-align:right">08</p>
+<aside class="notes">“Em kiểm bằng cách duy nhất em tin: đặt hình dựng cạnh lát cắt gốc của cùng ca. Phần mềm luôn hiện ba mặt cắt gốc bên cạnh hình 3D, và ngay trên màn hình có dòng nhắc: chưa phải thiết bị y tế, luôn đối chiếu lát cắt gốc.” [Chỉ vào hình] “Ngay trên hình này đã có những thứ phải soi. [Nếu đúng: các vân bậc thang trên thành mạch là do cách dựng từ các lát cắt, không phải giải phẫu thật. Các vòng trắng là … — anh xác nhận rồi mới nói.]” “Và đây là một lần AI làm sai. [Kể lỗi thật: mã chạy không báo lỗi, hình hiện ra rất đẹp, nhưng so với phim gốc thì … không khớp.]” [Nhấn] “Điều đáng sợ của kiểu lỗi này là phần mềm không báo lỗi. Một hình 3D đẹp chưa chắc là một hình 3D đúng.” “Giới hạn hiện tại: phần mềm chưa được kiểm định. Nó có thước đo, nhưng em chưa so sai lệch phép đo với phần mềm chuẩn, nên em không dùng số đo đó để quyết định.”</aside>
+
+</div>
+</section>
+<section id="b1" data-background-color="#EEF2F4">
+<div class="frame" style="background:#EEF2F4;color:#13233A;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:28px">
+
+<p style="font-size:28px;font-weight:700;color:#C8323C;letter-spacing:3px;text-transform:uppercase">Ca B · Nghiên cứu · 1/2</p>
+<h2 style="font-size:64px;font-weight:800;line-height:1.15">Ba chỗ AI rút ngắn được công nghiên cứu</h2>
+<table style="font-size:26px;color:#4A5568;font-family:'Be Vietnam Pro', Arial, sans-serif">
+<tr style="background:#13233A"><th style="width:19%;color:#F7F5F0">Việc</th><th style="width:27%;color:#F7F5F0">Đưa gì cho AI</th><th style="width:27%;color:#F7F5F0">Nhận lại</th><th style="width:27%;color:#F7F5F0">Kiểm ở đâu</th></tr>
+<tr style="background:#FCFCFA"><td style="color:#13233A">Đề cương, phiếu thu thập</td><td>Câu hỏi nghiên cứu, mẫu của hội đồng, tài liệu nền</td><td>Bản nháp đúng mẫu, danh sách biến số</td><td>Người hướng dẫn và hội đồng duyệt thiết kế</td></tr>
+<tr style="background:#F4F7F9"><td style="color:#13233A">Phân tích số liệu</td><td>File số liệu đã bỏ định danh, kế hoạch phân tích chốt trước</td><td>Bảng, biểu đồ, kèm mã R chạy lại được</td><td>Chạy lại mã trên máy mình; người hiểu thống kê duyệt</td></tr>
+<tr style="background:#FCFCFA"><td style="color:#13233A">Tổng quan y văn</td><td>Câu hỏi, tiêu chí chọn bài, khoảng năm</td><td>Bảng tổng hợp có PMID</td><td>Mở từng PMID trên PubMed, đối chiếu số liệu</td></tr>
+</table>
+<div style="display:flex;flex-direction:row;gap:16px;align-items:center;background:#FFF1D6;padding:20px 28px;border:2px dashed #C99A3B;border-radius:16px"><p style="font-size:26px;color:#8A5A00;line-height:1.4">[Anh chọn một đề tài thật để kể, và chỉ giữ những dòng anh đã tự làm]</p></div>
+<p style="position:absolute;left:128px;bottom:64px;width:1200px;font-size:24px;color:#6B7280">ThS.BS Nguyễn Văn Tú · Từ hỏi AI đến giao việc cho AI</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;color:#6B7280;text-align:right">09</p>
+<aside class="notes">“Ca B là nghiên cứu khoa học. Em dùng AI ở ba chỗ. [Kể bằng một đề tài thật của anh.]” “Một, đề cương và phiếu thu thập số liệu: em đưa câu hỏi nghiên cứu, mẫu của hội đồng và tài liệu nền; nhận lại bản nháp đúng mẫu và danh sách biến số.” “Hai, phân tích số liệu: em đưa file đã bỏ định danh và kế hoạch phân tích đã chốt trước; nhận lại bảng, biểu đồ, và quan trọng nhất là mã R để em chạy lại được trên máy mình.” “Ba, tổng quan y văn: AI tự tìm, đọc và lập bảng, mỗi dòng có PMID để em mở ra đối chiếu.” [Nhấn] “Cả ba chỗ có chung một nguyên tắc: thiết kế và phương pháp do người chốt trước. AI làm nhanh phần thực hiện, không được quyết định thay phần phương pháp.”</aside>
+
+</div>
+</section>
+<section id="b2" data-background-color="#F7F5F0">
+<div class="frame" style="background:#F7F5F0;color:#13233A;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:28px">
+
+<p style="font-size:28px;font-weight:700;color:#C8323C;letter-spacing:3px;text-transform:uppercase">Ca B · Nghiên cứu · 2/2</p>
+<h2 style="font-size:64px;font-weight:800;line-height:1.15">Ba kiểu sai phải canh trong nghiên cứu</h2>
+<div style="flex:1;display:flex;flex-direction:row;gap:24px;align-items:stretch">
+<div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#FFFEFB;padding:32px;border:1px solid #E2DED6;border-radius:24px">
+<p style="font-size:56px;font-weight:800;line-height:1;color:#C8323C">1</p>
+<h3 style="font-size:32px;font-weight:700;line-height:1.25;color:#13233A">Trích dẫn không tồn tại</h3>
+<p style="font-size:26px;color:#4A5568;line-height:1.45">Tên bài, tác giả, số liệu nghe rất hợp lý nhưng không có thật.</p>
+<div style="flex:1"></div>
+<p style="font-size:25px;font-weight:600;color:#13233A;line-height:1.4">Mở từng PMID.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#FFFEFB;padding:32px;border:1px solid #E2DED6;border-radius:24px">
+<p style="font-size:56px;font-weight:800;line-height:1;color:#C8323C">2</p>
+<h3 style="font-size:32px;font-weight:700;line-height:1.25;color:#13233A">Kiểm định sai giả định</h3>
+<p style="font-size:26px;color:#4A5568;line-height:1.45">Mã chạy ra con số, nhưng phép kiểm không hợp với dữ liệu.</p>
+<div style="flex:1"></div>
+<p style="font-size:25px;font-weight:600;color:#13233A;line-height:1.4">Người hiểu thống kê duyệt.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#FFFEFB;padding:32px;border:1px solid #E2DED6;border-radius:24px">
+<p style="font-size:56px;font-weight:800;line-height:1;color:#C8323C">3</p>
+<h3 style="font-size:32px;font-weight:700;line-height:1.25;color:#13233A">Chọn lại sau khi thấy kết quả</h3>
+<p style="font-size:26px;color:#4A5568;line-height:1.45">AI làm mười phân tích trong vài phút; dễ giữ lại phân tích đẹp nhất.</p>
+<div style="flex:1"></div>
+<p style="font-size:25px;font-weight:600;color:#13233A;line-height:1.4">Chốt kế hoạch trước khi chạy.</p>
+</div>
+</div>
+<div style="display:flex;flex-direction:row;gap:16px;align-items:center;background:#FFF1D6;padding:20px 28px;border:2px dashed #C99A3B;border-radius:16px"><p style="font-size:26px;color:#8A5A00;line-height:1.4">[Anh điền một lần AI sai thật trong đề tài của anh]</p></div>
+<p style="position:absolute;left:128px;bottom:64px;width:1200px;font-size:24px;color:#6B7280">ThS.BS Nguyễn Văn Tú · Từ hỏi AI đến giao việc cho AI</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;color:#6B7280;text-align:right">10</p>
+<aside class="notes">“Trong nghiên cứu, có ba kiểu sai em luôn canh.” “Một, trích dẫn không tồn tại. AI có thể viết ra một bài báo với tên tác giả, tạp chí, số liệu nghe rất hợp lý, nhưng bài đó không có thật. Cách chặn duy nhất là mở từng PMID.” “Hai, kiểm định sai giả định. Mã vẫn chạy, vẫn ra giá trị p, nhưng phép kiểm không hợp với dữ liệu. Phần này cần người hiểu thống kê duyệt.” “Ba, và đây là kiểu nguy hiểm nhất vì lỗi là ở mình chứ không phải ở AI: vì AI làm mười phân tích chỉ trong vài phút, mình rất dễ giữ lại phân tích cho kết quả đẹp nhất. Cách chặn là chốt kế hoạch phân tích trước khi chạy.” [Kể một lần sai thật của anh, nếu có.] “AI làm nghiên cứu nhanh hơn. Nó không làm nghiên cứu đúng hơn; phần đó vẫn là của mình.”</aside>
+
+</div>
+</section>
+<section id="c1" data-background-color="#EEF2F4">
+<div class="frame" style="background:#EEF2F4;color:#13233A;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:28px">
+
+<p style="font-size:28px;font-weight:700;color:#C8323C;letter-spacing:3px;text-transform:uppercase">Ca C · Giảng dạy · 1/2</p>
+<h2 style="font-size:64px;font-weight:800;line-height:1.15">Ngân hàng câu hỏi: viết quy trình một lần</h2>
+<div style="flex:1;display:flex;flex-direction:row;gap:24px;align-items:stretch">
+<div style="flex:3;display:flex;flex-direction:column;gap:14px;background:#13233A;padding:36px;border-radius:24px">
+<p style="font-size:24px;font-weight:700;color:#E8A0A5;letter-spacing:2px;text-transform:uppercase">Quy trình đóng gói (skill)</p>
+<p style="font-size:27px;color:#F7F5F0;line-height:1.5">Mỗi câu có tình huống lâm sàng, bốn phương án, một đáp án đúng.</p>
+<p style="font-size:27px;color:#F7F5F0;line-height:1.5">Ghi mức Bloom; giải thích vì sao đúng và vì sao từng phương án sai.</p>
+<p style="font-size:27px;color:#F7F5F0;line-height:1.5">Ghi nguồn guideline hoặc giáo trình; đúng biểu mẫu của trường.</p>
+<p style="font-size:27px;color:#F7F5F0;line-height:1.5">Không lặp câu đã có.</p>
+</div>
+<div style="flex:2;display:flex;flex-direction:column;gap:18px">
+<div style="display:flex;flex-direction:column;gap:10px;background:#FCFCFA;padding:26px;border:1px solid #D8DEE4;border-radius:20px">
+<h3 style="font-size:30px;font-weight:700;line-height:1.2;color:#13233A">Kiểm ở đâu</h3>
+<p style="font-size:26px;color:#4A5568;line-height:1.45">Người ra đề duyệt từng đáp án và từng nguồn trước khi đưa vào ngân hàng.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#FFFEFB;padding:26px;border:3px solid #C8323C;border-radius:20px">
+<h3 style="font-size:30px;font-weight:700;line-height:1.2;color:#C8323C">AI sai ở đâu</h3>
+<p style="font-size:26px;color:#8A5A00;line-height:1.45">[Anh điền: ví dụ một câu có đáp án chưa chuẩn hoặc nguồn ghi sai]</p>
+</div>
+</div>
+</div>
+<p style="font-size:26px;color:#4A5568;line-height:1.4">Đề thi là tài liệu mật: không đưa đề thật lên nền tảng chưa được nhà trường cho phép.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1200px;font-size:24px;color:#6B7280">ThS.BS Nguyễn Văn Tú · Từ hỏi AI đến giao việc cho AI</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;color:#6B7280;text-align:right">11</p>
+<aside class="notes">“Ca C là giảng dạy. Việc đầu tiên là soạn ngân hàng câu hỏi trắc nghiệm cho bộ môn.” “Cách thông thường là mỗi lần lại dặn AI từ đầu: viết câu hỏi thế này, thế kia. Em làm khác: em viết bộ quy tắc ra đề một lần, đóng gói lại thành một quy trình mà AI tự lấy ra dùng khi gặp đúng việc. Giới chuyên môn gọi đó là skill.” “Quy tắc gồm: tình huống lâm sàng, bốn phương án, một đáp án đúng, mức Bloom, giải thích vì sao đúng và vì sao sai, nguồn, và đúng biểu mẫu của trường.” “Từ đó, chỉ cần một câu ngắn là AI soạn đúng chuẩn. Nhưng em vẫn duyệt từng đáp án và từng nguồn. [Kể một câu AI ra đáp án chưa chuẩn hoặc ghi nguồn sai.]” [Nhấn] “Và một lưu ý: đề thi là tài liệu mật. Em không đưa đề thật lên nền tảng chưa được nhà trường cho phép.”</aside>
+
+</div>
+</section>
+<section id="c2" data-background-color="#F7F5F0">
+<div class="frame" style="background:#F7F5F0;color:#13233A;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:28px">
+
+<div style="display:flex;flex-direction:row;gap:20px;align-items:center"><p style="font-size:28px;font-weight:700;color:#C8323C;letter-spacing:3px;text-transform:uppercase">Ca C · Giảng dạy · 2/2</p><p style="font-size:24px;font-weight:700;color:#8A5A00;background:#FFF1D6;padding:4px 16px;border-radius:999px;white-space:nowrap">Đang làm</p></div>
+<h2 style="font-size:64px;font-weight:800;line-height:1.15">Web mô phỏng can thiệp nội mạch</h2>
+<div style="flex:1;display:flex;flex-direction:row;gap:28px;align-items:stretch">
+<div style="flex:3;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:10px;background:#E6ECEF;border:3px dashed #8A94A6;border-radius:24px">
+<p style="font-size:32px;font-weight:700;color:#4A5568;text-align:center">[Ảnh màn hình web mô phỏng EVAR / TEVAR]</p>
+<p style="font-size:24px;color:#6B7280;text-align:center">Chỉ chiếu phần đã chạy được</p>
+</div>
+<div style="flex:2;display:flex;flex-direction:column;gap:18px">
+<div style="display:flex;flex-direction:column;gap:10px;background:#FFFEFB;padding:26px;border:1px solid #E2DED6;border-radius:20px">
+<h3 style="font-size:30px;font-weight:700;line-height:1.2;color:#13233A">Ý tưởng</h3>
+<p style="font-size:26px;color:#4A5568;line-height:1.45">Học viên thao tác từng bước trên mô hình, thay vì chỉ đọc slide.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#FFFEFB;padding:26px;border:1px solid #E2DED6;border-radius:20px">
+<h3 style="font-size:30px;font-weight:700;line-height:1.2;color:#13233A">Kiểm ở đâu</h3>
+<p style="font-size:26px;color:#4A5568;line-height:1.45">Giảng viên duyệt từng nội dung chuyên môn theo giáo trình và guideline.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#FFFEFB;padding:26px;border:3px solid #C8323C;border-radius:20px">
+<h3 style="font-size:30px;font-weight:700;line-height:1.2;color:#C8323C">AI sai ở đâu</h3>
+<p style="font-size:26px;color:#8A5A00;line-height:1.45">[Anh điền một chi tiết chuyên môn AI vẽ hoặc viết sai]</p>
+</div>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1200px;font-size:24px;color:#6B7280">ThS.BS Nguyễn Văn Tú · Từ hỏi AI đến giao việc cho AI</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;color:#6B7280;text-align:right">12</p>
+<aside class="notes">“Việc thứ hai trong giảng dạy em đang làm dở, nên em nói đúng là đang làm: một trang web mô phỏng can thiệp nội mạch, bắt đầu từ EVAR và TEVAR.” “Ý tưởng là học viên được thao tác từng bước trên mô hình, thay vì chỉ ngồi đọc slide. [Mô tả phần đã chạy được; không mô tả phần chưa có.]” “Cách làm giống hệt ca phần mềm: em mô tả, AI viết mã, em kiểm. Nhưng ở đây thứ phải kiểm là nội dung chuyên môn: kích thước, trình tự, chỉ định. [Kể một chi tiết AI vẽ hoặc viết sai mà anh đã phải sửa.]” [Nhấn] “AI vẽ rất nhanh và rất tự tin. Nếu giảng viên không duyệt, cái sai sẽ đi thẳng vào đầu học viên, và trông nó còn đẹp hơn cái đúng.”</aside>
+
+</div>
+</section>
+<section id="d1" data-background-color="#EEF2F4">
+<div class="frame" style="background:#EEF2F4;color:#13233A;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:28px">
+
+<p style="font-size:28px;font-weight:700;color:#C8323C;letter-spacing:3px;text-transform:uppercase">Ca D · Việc lặp lại</p>
+<h2 style="font-size:64px;font-weight:800;line-height:1.15">Giấy tờ: việc tốn giờ nhất, ít ai kể nhất</h2>
+<div style="flex:1;display:flex;flex-direction:row;gap:24px;align-items:stretch">
+<div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#FCFCFA;padding:32px;border:1px solid #D8DEE4;border-radius:24px">
+
+<h3 style="font-size:32px;font-weight:700;line-height:1.25;color:#13233A">Hồ sơ đề tài</h3>
+<p style="font-size:26px;color:#4A5568;line-height:1.45">Bộ biểu mẫu nghiệm thu, thanh quyết toán: nhiều văn bản, cùng một bộ thông tin.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#FCFCFA;padding:32px;border:1px solid #D8DEE4;border-radius:24px">
+
+<h3 style="font-size:32px;font-weight:700;line-height:1.25;color:#13233A">Bài giảng</h3>
+<p style="font-size:26px;color:#4A5568;line-height:1.45">Từ giáo trình và mục tiêu bài học ra bản Word và bộ slide đúng mẫu.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#13233A;padding:32px;border-radius:24px">
+
+<h3 style="font-size:32px;font-weight:700;line-height:1.25;color:#F7F5F0">Chính bài trình bày này</h3>
+<p style="font-size:26px;color:#BFD0DC;line-height:1.45">Slide và kịch bản soạn cùng AI; ý, ca bệnh và mọi con số do tôi quyết.</p>
+</div>
+</div>
+<div style="display:flex;flex-direction:row;gap:24px;align-items:stretch">
+<p style="flex:1;font-size:26px;color:#13233A;line-height:1.4;background:#FFFEFB;padding:20px 28px;border:3px solid #C8323C;border-radius:16px"><b>AI sai ở đâu:</b> chép lệch số tiền, ngày tháng, tên biểu mẫu. Đối chiếu với văn bản gốc trước khi ký.</p>
+<p style="flex:1;font-size:26px;color:#8A5A00;line-height:1.4;background:#FFF1D6;padding:20px 28px;border:2px dashed #C99A3B;border-radius:16px">[Anh giữ thẻ nào đã làm thật; điền một lỗi cụ thể đã gặp]</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1200px;font-size:24px;color:#6B7280">ThS.BS Nguyễn Văn Tú · Từ hỏi AI đến giao việc cho AI</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;color:#6B7280;text-align:right">13</p>
+<aside class="notes">“Ca D không có gì hào nhoáng, nhưng là ca tiết kiệm cho em nhiều giờ nhất: giấy tờ.” “Hồ sơ nghiệm thu và thanh quyết toán một đề tài gồm rất nhiều biểu mẫu, mà thực chất là cùng một bộ thông tin viết đi viết lại. Em đưa cho AI bộ thông tin gốc và các mẫu, nhận lại cả bộ hồ sơ nháp.” “Bài giảng cũng vậy: từ giáo trình và mục tiêu bài học ra bản Word và bộ slide đúng mẫu.” [Chỉ thẻ thứ ba, cười nhẹ] “Và em xin nói thật: chính bộ slide và kịch bản hôm nay cũng được soạn cùng AI. Nhưng ý, ca bệnh và mọi con số là do em quyết và em chịu trách nhiệm.” [Nhấn] “Kiểu sai ở ca này rất đời thường: chép lệch một con số, một ngày tháng, một tên biểu mẫu. [Kể một lỗi thật.] Nên trước khi ký, em đối chiếu với văn bản gốc.”</aside>
+
+</div>
+</section>
+<section id="sum" data-background-color="#F7F5F0">
+<div class="frame" style="background:#F7F5F0;color:#13233A;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:28px">
+
+<p style="font-size:28px;font-weight:700;color:#C8323C;letter-spacing:3px;text-transform:uppercase">Nhìn lại bốn ca</p>
+<h2 style="font-size:64px;font-weight:800;line-height:1.15">AI làm phần nào, người giữ phần nào</h2>
+<table style="font-size:27px;color:#4A5568;font-family:'Be Vietnam Pro', Arial, sans-serif">
+<tr style="background:#13233A"><th style="width:16%;color:#F7F5F0">Ca</th><th style="width:26%;color:#F7F5F0">AI làm</th><th style="width:29%;color:#F7F5F0">Người giữ</th><th style="width:29%;color:#F7F5F0">Kiểu sai phải canh</th></tr>
+<tr style="background:#FFFEFB"><td style="color:#13233A">Phần mềm</td><td>Viết và sửa mã</td><td>Dựng gì, đúng hay sai so với phim gốc</td><td style="color:#C8323C">Mã chạy được nhưng hình sai</td></tr>
+<tr style="background:#F3F0EA"><td style="color:#13233A">Nghiên cứu</td><td>Nháp, mã phân tích, tìm bài</td><td>Câu hỏi, thiết kế, phương pháp</td><td style="color:#C8323C">Trích dẫn không có thật, kiểm định sai</td></tr>
+<tr style="background:#FFFEFB"><td style="color:#13233A">Giảng dạy</td><td>Soạn câu hỏi, dựng mô phỏng</td><td>Nội dung chuyên môn, đáp án</td><td style="color:#C8323C">Sai chuyên môn trình bày rất tự tin</td></tr>
+<tr style="background:#F3F0EA"><td style="color:#13233A">Việc lặp lại</td><td>Điền mẫu, dàn trang</td><td>Số liệu gốc, chữ ký</td><td style="color:#C8323C">Chép lệch số, ngày, tên mẫu</td></tr>
+</table>
+<p style="font-size:28px;font-weight:600;color:#13233A;line-height:1.4">Cột giữa không giao được cho AI, vì đó là phần phải chịu trách nhiệm.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1200px;font-size:24px;color:#6B7280">ThS.BS Nguyễn Văn Tú · Từ hỏi AI đến giao việc cho AI</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;color:#6B7280;text-align:right">14</p>
+<aside class="notes">“Em xin gom bốn ca lại trong một bảng.” [Đọc theo cột, không đọc theo dòng.] “Cột thứ nhất, AI làm gì: viết mã, viết nháp, soạn câu hỏi, điền mẫu. Toàn là phần thực hiện.” “Cột thứ hai, người giữ gì: dựng cái gì và đúng hay sai; câu hỏi và phương pháp nghiên cứu; nội dung chuyên môn; số liệu gốc và chữ ký.” “Cột thứ ba, kiểu sai phải canh: mã chạy được nhưng hình sai; trích dẫn không có thật; sai chuyên môn nhưng trình bày rất tự tin; chép lệch con số.” [Nhấn] “Điểm chung của cột thứ ba: không lỗi nào tự báo. Sản phẩm vẫn chạy, vẫn đẹp, vẫn trôi chảy. Chỉ người có chuyên môn mới thấy. Vì vậy cột giữa không giao được cho AI.”</aside>
+
+</div>
+</section>
+<section id="verify" data-background-color="#13233A" data-transition="zoom">
+<div class="frame" style="background:#13233A;color:#F7F5F0;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;justify-content:center;gap:40px">
+
+<p style="font-size:28px;font-weight:700;color:#E8A0A5;letter-spacing:3px;text-transform:uppercase">Nguyên tắc nghiệm thu</p>
+<h2 style="font-size:96px;font-weight:800;line-height:1.1;color:#F7F5F0">AI không chấm bài của chính nó</h2>
+<p style="font-size:36px;color:#BFD0DC;line-height:1.45">Mỗi sản phẩm cần một nguồn đối chiếu nằm ngoài AI: phim gốc, hồ sơ gốc, PubMed, mã chạy lại, người có chuyên môn.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1200px;font-size:24px;color:#9FB2C4">ThS.BS Nguyễn Văn Tú · Từ hỏi AI đến giao việc cho AI</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;color:#9FB2C4;text-align:right">15</p>
+<aside class="notes">[Dừng 3 giây sau khi chuyển trang. Đọc chậm câu trên màn hình.] “AI không chấm bài của chính nó.” [Dừng] “Hỏi lại AI ‘bạn có chắc không’ thì chưa phải là kiểm. Nó có thể xin lỗi và đổi sang một câu trả lời sai khác, hoặc khẳng định lại cái sai ban đầu.” “Kiểm nghĩa là có một nguồn đối chiếu nằm ngoài AI. Với hình dựng là phim gốc. Với tường trình là hồ sơ gốc. Với trích dẫn là PubMed. Với thống kê là mã chạy lại và người hiểu thống kê. Với đề thi là người ra đề.” “Trước khi giao một việc cho AI, em tự hỏi: việc này em sẽ kiểm bằng gì? Nếu em không trả lời được, em chưa giao.”</aside>
+
+</div>
+</section>
+<section id="sys1" data-background-color="#EEF2F4">
+<div class="frame" style="background:#EEF2F4;color:#13233A;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:24px">
+
+<p style="font-size:28px;font-weight:700;color:#C8323C;letter-spacing:3px;text-transform:uppercase">Cơ chế phía sau · 1/4</p>
+<h2 style="font-size:64px;font-weight:800;line-height:1.15">Sáu lớp của một hệ thống AI làm việc</h2>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px">
+<div style="flex:1;display:flex;flex-direction:row;gap:24px;align-items:center;background:#13233A;padding:0 32px;border-radius:16px"><p style="font-size:30px;font-weight:700;color:#F7F5F0;width:300px">Con người</p><p style="font-size:26px;color:#BFD0DC">Đặt mục tiêu, duyệt, nghiệm thu, chịu trách nhiệm</p></div>
+<div style="flex:1;display:flex;flex-direction:row;gap:24px;align-items:center;background:#FCFCFA;padding:0 32px;border:1px solid #D8DEE4;border-radius:16px"><p style="font-size:30px;font-weight:700;color:#13233A;width:300px">Agent</p><p style="font-size:26px;color:#4A5568">Tự làm nhiều bước cho tới khi xong việc</p></div>
+<div style="flex:1;display:flex;flex-direction:row;gap:24px;align-items:center;background:#FCFCFA;padding:0 32px;border:1px solid #D8DEE4;border-radius:16px"><p style="font-size:30px;font-weight:700;color:#13233A;width:300px">Skill</p><p style="font-size:26px;color:#4A5568">Quy trình chuẩn viết sẵn, như một SOP</p></div>
+<div style="flex:1;display:flex;flex-direction:row;gap:24px;align-items:center;background:#FCFCFA;padding:0 32px;border:1px solid #D8DEE4;border-radius:16px"><p style="font-size:30px;font-weight:700;color:#13233A;width:300px">Công cụ, MCP</p><p style="font-size:26px;color:#4A5568">Những gì AI được phép dùng: đọc file, chạy mã, vào ứng dụng</p></div>
+<div style="flex:1;display:flex;flex-direction:row;gap:24px;align-items:center;background:#FCFCFA;padding:0 32px;border:1px solid #D8DEE4;border-radius:16px"><p style="font-size:30px;font-weight:700;color:#13233A;width:300px">Môi trường</p><p style="font-size:26px;color:#4A5568">Ứng dụng bao quanh model: chat, công cụ lập trình (harness)</p></div>
+<div style="flex:1;display:flex;flex-direction:row;gap:24px;align-items:center;background:#FCFCFA;padding:0 32px;border:1px solid #D8DEE4;border-radius:16px"><p style="font-size:30px;font-weight:700;color:#13233A;width:300px">Model</p><p style="font-size:26px;color:#4A5568">Phần đọc, suy luận và viết</p></div>
+</div>
+<p style="font-size:27px;font-weight:600;color:#13233A;line-height:1.4">Cùng một model, khác năm lớp phía trên thì ra kết quả khác hẳn.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1200px;font-size:24px;color:#6B7280">ThS.BS Nguyễn Văn Tú · Từ hỏi AI đến giao việc cho AI</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;color:#6B7280;text-align:right">16</p>
+<aside class="notes">“Câu hỏi tiếp theo: cùng dùng một AI, vì sao người làm ra được phần mềm, người chỉ nhận được vài đoạn văn? Câu trả lời nằm ở cả hệ thống, không chỉ ở model.” “Em chia thành sáu lớp, đọc từ dưới lên. Model là phần đọc, suy luận và viết; ví như một bác sĩ giỏi. Môi trường là ứng dụng bao quanh nó; ví như phòng mổ. Công cụ là những gì nó được phép dùng: đọc file, chạy mã, kết nối vào ứng dụng khác qua một chuẩn gọi là MCP; ví như dụng cụ. Skill là quy trình chuẩn viết sẵn; ví như SOP. Agent là khi nó tự làm nhiều bước tới khi xong việc. Và trên cùng là con người.” [Nhấn] “Một bác sĩ giỏi mà không có phòng mổ, không dụng cụ, không quy trình thì cũng không mổ được. Người dùng AI ở tầng một chỉ đang dùng lớp dưới cùng.”</aside>
+
+</div>
+</section>
+<section id="sys2" data-background-color="#F7F5F0">
+<div class="frame" style="background:#F7F5F0;color:#13233A;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:28px">
+
+<p style="font-size:28px;font-weight:700;color:#C8323C;letter-spacing:3px;text-transform:uppercase">Cơ chế phía sau · 2/4</p>
+<h2 style="font-size:64px;font-weight:800;line-height:1.15">Agent là một vòng lặp, không phải phép màu</h2>
+<div style="display:flex;flex-direction:row;gap:12px;align-items:stretch">
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#13233A;padding:26px;border-radius:20px"><p style="font-size:44px;font-weight:800;line-height:1;color:#E8A0A5">1</p><h3 style="font-size:30px;font-weight:700;line-height:1.25;color:#F7F5F0">Nhận mục tiêu</h3><p style="font-size:24px;color:#BFD0DC;line-height:1.4">Từ người giao việc</p></div>
+<p class="arrow">→</p>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#FFFEFB;padding:26px;border:1px solid #E2DED6;border-radius:20px"><p style="font-size:44px;font-weight:800;line-height:1;color:#1F7A8C">2</p><h3 style="font-size:30px;font-weight:700;line-height:1.25;color:#13233A">Lập kế hoạch</h3><p style="font-size:24px;color:#4A5568;line-height:1.4">Chia việc thành bước</p></div>
+<p class="arrow">→</p>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#FFFEFB;padding:26px;border:1px solid #E2DED6;border-radius:20px"><p style="font-size:44px;font-weight:800;line-height:1;color:#1F7A8C">3</p><h3 style="font-size:30px;font-weight:700;line-height:1.25;color:#13233A">Hành động</h3><p style="font-size:24px;color:#4A5568;line-height:1.4">Dùng công cụ: viết, chạy, đọc</p></div>
+<p class="arrow">→</p>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#FFFEFB;padding:26px;border:1px solid #E2DED6;border-radius:20px"><p style="font-size:44px;font-weight:800;line-height:1;color:#1F7A8C">4</p><h3 style="font-size:30px;font-weight:700;line-height:1.25;color:#13233A">Xem kết quả</h3><p style="font-size:24px;color:#4A5568;line-height:1.4">Lỗi thì quay lại bước 2</p></div>
+<p class="arrow">→</p>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#13233A;padding:26px;border-radius:20px"><p style="font-size:44px;font-weight:800;line-height:1;color:#E8A0A5">5</p><h3 style="font-size:30px;font-weight:700;line-height:1.25;color:#F7F5F0">Báo lại</h3><p style="font-size:24px;color:#BFD0DC;line-height:1.4">Người nghiệm thu</p></div>
+</div>
+<div style="flex:1"></div>
+<div style="display:flex;flex-direction:row;gap:24px;align-items:stretch">
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#FFFEFB;padding:28px;border:1px solid #E2DED6;border-radius:20px">
+<h3 style="font-size:30px;font-weight:700;line-height:1.25;color:#13233A">Vì sao làm được việc dài</h3>
+<p style="font-size:26px;color:#4A5568;line-height:1.45">Bước 2 đến 4 tự lặp nhiều lần mà không cần người nhắc.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#FFFEFB;padding:28px;border:3px solid #C8323C;border-radius:20px">
+<h3 style="font-size:30px;font-weight:700;line-height:1.25;color:#C8323C">Vì sao phải giới hạn quyền</h3>
+<p style="font-size:26px;color:#4A5568;line-height:1.45">Agent làm được gì thì cũng làm sai được nấy: chỉ cho vào đúng thư mục, không cho xoá, duyệt trước thay đổi lớn.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1200px;font-size:24px;color:#6B7280">ThS.BS Nguyễn Văn Tú · Từ hỏi AI đến giao việc cho AI</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;color:#6B7280;text-align:right">17</p>
+<aside class="notes">“Chữ agent nghe to tát, nhưng cơ chế rất đơn giản: một vòng lặp.” “Nó nhận mục tiêu. Nó lập kế hoạch, chia việc thành bước. Nó hành động bằng công cụ: viết mã, chạy mã, đọc file. Nó xem kết quả; nếu lỗi, nó quay lại sửa kế hoạch. Cứ thế cho tới khi xong, rồi báo lại.” “Khác biệt so với hỏi đáp là bước hai đến bước bốn tự lặp nhiều lần mà không cần mình nhắc. Phần mềm dựng hình của em ra đời từ rất nhiều vòng như vậy.” [Nhấn] “Nhưng agent làm được gì thì cũng làm sai được nấy, và làm sai rất nhanh. Vì vậy em có ba nguyên tắc: chỉ cho nó vào đúng thư mục cần làm; không cho quyền xoá; và thay đổi lớn thì bắt nó trình trước cho em duyệt. Và không bao giờ cho agent vào thư mục có hồ sơ bệnh nhân.”</aside>
+
+</div>
+</section>
+<section id="sys3" data-background-color="#EEF2F4">
+<div class="frame" style="background:#EEF2F4;color:#13233A;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:28px">
+
+<p style="font-size:28px;font-weight:700;color:#C8323C;letter-spacing:3px;text-transform:uppercase">Cơ chế phía sau · 3/4</p>
+<h2 style="font-size:64px;font-weight:800;line-height:1.15">Năm bước giao một việc cho AI</h2>
+<table style="font-size:27px;color:#4A5568;font-family:'Be Vietnam Pro', Arial, sans-serif">
+<tr style="background:#13233A"><th style="width:20%;color:#F7F5F0">Bước</th><th style="width:48%;color:#F7F5F0">Làm gì</th><th style="width:32%;color:#F7F5F0">Giống việc gì trong viện</th></tr>
+<tr style="background:#FCFCFA"><td style="color:#13233A">1. Đặc tả</td><td>Viết rõ mục tiêu, đầu ra, điều không được làm</td><td>Y lệnh rõ ràng</td></tr>
+<tr style="background:#F4F7F9"><td style="color:#13233A">2. Bối cảnh</td><td>Đưa mẫu, tài liệu, quy ước; ghi lại để lần sau đỡ dặn</td><td>Hồ sơ bệnh án</td></tr>
+<tr style="background:#FCFCFA"><td style="color:#13233A">3. Thực hiện</td><td>Bắt AI trình kế hoạch, duyệt rồi mới cho làm</td><td>Duyệt mổ</td></tr>
+<tr style="background:#F4F7F9"><td style="color:#C8323C">4. Kiểm chứng</td><td>Đối chiếu với nguồn nằm ngoài AI</td><td>Nghiệm thu, bình bệnh án</td></tr>
+<tr style="background:#FCFCFA"><td style="color:#13233A">5. Lưu lại</td><td>Đóng gói thành quy trình; lưu phiên bản để quay lại được</td><td>Quy trình chuẩn (SOP)</td></tr>
+</table>
+<p style="font-size:27px;font-weight:600;color:#13233A;line-height:1.4">Bước 1 và bước 4 không giao được cho AI. Người dùng ở tầng một thường bỏ cả hai.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1200px;font-size:24px;color:#6B7280">ThS.BS Nguyễn Văn Tú · Từ hỏi AI đến giao việc cho AI</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;color:#6B7280;text-align:right">18</p>
+<aside class="notes">“Nếu quý thầy cô chỉ nhớ một trang về cách làm, em xin đề nghị trang này.” “Bước một, đặc tả: viết rõ mục tiêu, đầu ra mong muốn và những điều không được làm. Giống một y lệnh: y lệnh mơ hồ thì điều dưỡng giỏi mấy cũng thực hiện sai.” “Bước hai, bối cảnh: đưa mẫu, tài liệu, quy ước, và ghi lại để lần sau đỡ phải dặn. Giống hồ sơ bệnh án.” “Bước ba, thực hiện: với việc lớn, em bắt AI trình kế hoạch trước, em duyệt rồi mới cho làm. Giống duyệt mổ.” “Bước bốn, kiểm chứng: đối chiếu với nguồn nằm ngoài AI.” “Bước năm, lưu lại: việc nào lặp lại thì đóng gói thành quy trình, và lưu phiên bản để sửa hỏng thì quay về được. Lưu phiên bản giúp khôi phục, không ngăn được lỗi.” [Nhấn] “Bước một và bước bốn là của mình. Người dùng AI ở tầng một thường bỏ cả hai: hỏi mơ hồ, rồi tin luôn.”</aside>
+
+</div>
+</section>
+<section id="sys4" data-background-color="#F7F5F0">
+<div class="frame" style="background:#F7F5F0;color:#13233A;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:28px">
+
+<p style="font-size:28px;font-weight:700;color:#C8323C;letter-spacing:3px;text-transform:uppercase">Cơ chế phía sau · 4/4</p>
+<h2 style="font-size:64px;font-weight:800;line-height:1.15">Bốn giới hạn kỹ thuật nên biết</h2>
+<div style="flex:1;display:grid;grid-template-columns:1fr 1fr;gap:20px">
+<div style="display:flex;flex-direction:column;gap:10px;background:#FFFEFB;padding:28px;border:1px solid #E2DED6;border-radius:20px">
+<h3 style="font-size:32px;font-weight:700;line-height:1.25;color:#13233A">Bối cảnh có giới hạn</h3>
+<p style="font-size:26px;color:#4A5568;line-height:1.45">Phiên quá dài thì chi tiết ở đầu dễ bị bỏ sót.</p>
+<p style="font-size:26px;font-weight:600;color:#1F7A8C;line-height:1.45">Mỗi việc một phiên riêng.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#FFFEFB;padding:28px;border:1px solid #E2DED6;border-radius:20px">
+<h3 style="font-size:32px;font-weight:700;line-height:1.25;color:#13233A">Trôi chảy không có nghĩa là đúng</h3>
+<p style="font-size:26px;color:#4A5568;line-height:1.45">Câu sai và câu đúng được viết bằng cùng một giọng tự tin.</p>
+<p style="font-size:26px;font-weight:600;color:#1F7A8C;line-height:1.45">Kiểm bằng nguồn, không kiểm bằng cảm giác.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#FFFEFB;padding:28px;border:1px solid #E2DED6;border-radius:20px">
+<h3 style="font-size:32px;font-weight:700;line-height:1.25;color:#13233A">Kết quả không lặp lại y hệt</h3>
+<p style="font-size:26px;color:#4A5568;line-height:1.45">Cùng một yêu cầu, hai lần chạy có thể ra hai kết quả.</p>
+<p style="font-size:26px;font-weight:600;color:#1F7A8C;line-height:1.45">Lưu câu lệnh và mã để chạy lại.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#FFFEFB;padding:28px;border:1px solid #E2DED6;border-radius:20px">
+<h3 style="font-size:32px;font-weight:700;line-height:1.25;color:#13233A">Kiến thức có mốc thời gian</h3>
+<p style="font-size:26px;color:#4A5568;line-height:1.45">Model học tới một thời điểm; guideline mới hơn có thể chưa có.</p>
+<p style="font-size:26px;font-weight:600;color:#1F7A8C;line-height:1.45">Đưa tài liệu gốc hoặc bắt tra nguồn.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1200px;font-size:24px;color:#6B7280">ThS.BS Nguyễn Văn Tú · Từ hỏi AI đến giao việc cho AI</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;color:#6B7280;text-align:right">19</p>
+<aside class="notes">“Trước khi sang phần cuối, em xin nêu bốn giới hạn kỹ thuật. Biết bốn điều này thì đoán trước được phần lớn lỗi.” “Một, bối cảnh có giới hạn. AI chỉ giữ được một lượng thông tin nhất định trong một phiên; phiên quá dài thì chi tiết ở đầu dễ bị bỏ sót. Nên mỗi việc một phiên riêng.” “Hai, trôi chảy không có nghĩa là đúng. AI viết câu sai và câu đúng bằng cùng một giọng tự tin. Mình quen đánh giá con người qua sự tự tin; với AI, thói quen đó phản tác dụng.” “Ba, kết quả không lặp lại y hệt. Cùng một yêu cầu, hai lần chạy có thể ra hai kết quả. Trong nghiên cứu, điều đó có nghĩa là phải lưu câu lệnh và lưu mã.” “Bốn, kiến thức có mốc thời gian. Model học tới một thời điểm; guideline ra sau đó nó có thể chưa biết, hoặc biết sai. Nên em đưa tài liệu gốc cho nó, hoặc bắt nó tra nguồn và ghi nguồn.”</aside>
+
+</div>
+</section>
+<section id="next" data-background-color="#EEF2F4">
+<div class="frame" style="background:#EEF2F4;color:#13233A;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:28px">
+
+<div style="display:flex;flex-direction:row;gap:20px;align-items:center"><p style="font-size:28px;font-weight:700;color:#C8323C;letter-spacing:3px;text-transform:uppercase">Đi xa hơn</p><p style="font-size:24px;font-weight:700;color:#8A5A00;background:#FFF1D6;padding:4px 16px;border-radius:999px;white-space:nowrap">Hướng của ngành, chưa phải việc tôi đã làm</p></div>
+<h2 style="font-size:64px;font-weight:800;line-height:1.15">Ngoài hình 3D, còn làm được gì nữa?</h2>
+<div style="flex:1;display:flex;flex-direction:row;gap:24px;align-items:stretch">
+<div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#FCFCFA;padding:32px;border:1px solid #D8DEE4;border-radius:24px">
+
+<h3 style="font-size:32px;font-weight:700;line-height:1.25;color:#13233A">Phân đoạn CT tự động</h3>
+<p style="font-size:26px;color:#4A5568;line-height:1.45">Mô hình học máy tự tách cấu trúc giải phẫu, ví dụ TotalSegmentator, dùng được trong 3D Slicer.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#FCFCFA;padding:32px;border:1px solid #D8DEE4;border-radius:24px">
+
+<h3 style="font-size:32px;font-weight:700;line-height:1.25;color:#13233A">Mô hình in 3D theo bệnh nhân</h3>
+<p style="font-size:26px;color:#4A5568;line-height:1.45">Từ hình dựng ra mô hình cầm được trên tay, đã được báo cáo trong chuẩn bị mổ tim bẩm sinh phức tạp.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#FCFCFA;padding:32px;border:1px solid #D8DEE4;border-radius:24px">
+
+<h3 style="font-size:32px;font-weight:700;line-height:1.25;color:#13233A">Ghi chép lâm sàng tự động</h3>
+<p style="font-size:26px;color:#4A5568;line-height:1.45">AI nghe buổi khám và soạn nháp bệnh án cho bác sĩ duyệt; một số hệ thống y tế nước ngoài đã triển khai.</p>
+</div>
+</div>
+<p style="font-size:26px;color:#4A5568;line-height:1.4">Cả ba đều đụng tới dữ liệu và quyết định trên bệnh nhân, nên cần kiểm định và quy định trước khi dùng. Nguồn: Wasserthal J và cs., Radiology: Artificial Intelligence 2023.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1200px;font-size:24px;color:#6B7280">ThS.BS Nguyễn Văn Tú · Từ hỏi AI đến giao việc cho AI</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;color:#6B7280;text-align:right">20</p>
+<aside class="notes">[Nói rõ ngay câu đầu.] “Trang này em nói về hướng của ngành, không phải việc em đã làm.” “Một, phân đoạn CT tự động. Đã có những mô hình học máy tự tách các cấu trúc giải phẫu trên CT, ví dụ TotalSegmentator, công bố năm 2023 và dùng được trong phần mềm mã nguồn mở 3D Slicer. Đây đúng nghĩa là AI đọc ảnh, khác với phần mềm của em.” “Hai, mô hình in 3D theo từng bệnh nhân: từ hình dựng ra một mô hình cầm được trên tay. Y văn đã có báo cáo dùng trong chuẩn bị mổ tim bẩm sinh phức tạp.” “Ba, ghi chép lâm sàng tự động: AI nghe buổi khám, soạn nháp bệnh án để bác sĩ duyệt. Một số hệ thống y tế nước ngoài đã triển khai.” [Nhấn] “Cả ba khác bốn ca của em ở một điểm: chúng đụng trực tiếp tới dữ liệu và quyết định trên bệnh nhân. Nên câu hỏi không còn là làm được không, mà là được phép chưa và kiểm định chưa.”</aside>
+
+</div>
+</section>
+<section id="bound" data-background-color="#F7F5F0">
+<div class="frame" style="background:#F7F5F0;color:#13233A;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:28px">
+
+<p style="font-size:28px;font-weight:700;color:#C8323C;letter-spacing:3px;text-transform:uppercase">Ranh giới</p>
+<h2 style="font-size:64px;font-weight:800;line-height:1.15">Bốn điều không được đánh đổi lấy tốc độ</h2>
+<div style="flex:1;display:grid;grid-template-columns:1fr 1fr;gap:20px">
+<div style="display:flex;flex-direction:column;gap:10px;background:#FFFEFB;padding:28px;border:1px solid #E2DED6;border-radius:20px">
+<div style="display:flex;flex-direction:row;gap:14px;align-items:center"><h3 style="font-size:32px;font-weight:700;line-height:1.25;color:#13233A">Dữ liệu bệnh nhân</h3></div>
+<p style="font-size:26px;color:#4A5568;line-height:1.45">Không đưa thông tin định danh lên nền tảng chưa được bệnh viện cho phép.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#FFFEFB;padding:28px;border:1px solid #E2DED6;border-radius:20px">
+<div style="display:flex;flex-direction:row;gap:14px;align-items:center"><h3 style="font-size:32px;font-weight:700;line-height:1.25;color:#13233A">Công cụ dùng cho bệnh nhân</h3></div>
+<p style="font-size:26px;color:#4A5568;line-height:1.45">Tự làm để tham khảo thì được; dùng để chẩn đoán, điều trị thì phải kiểm định và theo quy định về thiết bị y tế.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#FFFEFB;padding:28px;border:1px solid #E2DED6;border-radius:20px">
+<div style="display:flex;flex-direction:row;gap:14px;align-items:center"><h3 style="font-size:32px;font-weight:700;line-height:1.25;color:#13233A">Liêm chính khoa học</h3></div>
+<p style="font-size:26px;color:#4A5568;line-height:1.45">AI không đứng tên tác giả; việc dùng AI phải khai báo theo yêu cầu của tạp chí (khuyến cáo ICMJE).</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#FFFEFB;padding:28px;border:1px solid #E2DED6;border-radius:20px">
+<div style="display:flex;flex-direction:row;gap:14px;align-items:center"><h3 style="font-size:32px;font-weight:700;line-height:1.25;color:#13233A">Tay nghề</h3></div>
+<p style="font-size:26px;color:#4A5568;line-height:1.45">Nội soi đại tràng: tỷ lệ phát hiện u tuyến ở ca không có AI giảm từ 28,4% xuống 22,4% sau khi trung tâm dùng AI.</p>
+</div>
+</div>
+<p style="font-size:24px;color:#6B7280;line-height:1.4">Budzyń K và cs., Lancet Gastroenterol Hepatol 2025. Nghiên cứu quan sát: không chứng minh nhân quả, không suy trực tiếp sang phẫu thuật.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1200px;font-size:24px;color:#6B7280">ThS.BS Nguyễn Văn Tú · Từ hỏi AI đến giao việc cho AI</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;color:#6B7280;text-align:right">21</p>
+<aside class="notes">“Nói về cái lợi thì dễ. Em xin nói bốn ranh giới em tự đặt cho mình.” “Một, dữ liệu bệnh nhân: không đưa thông tin định danh lên nền tảng chưa được bệnh viện cho phép. Mọi demo hôm nay đều dùng dữ liệu đã ẩn danh.” “Hai, công cụ dùng cho bệnh nhân. Tự làm một công cụ để tham khảo, như phần mềm của em, là một chuyện. Dùng nó để chẩn đoán hay quyết định điều trị là chuyện khác hẳn: khi đó phải kiểm định và theo quy định về thiết bị y tế.” “Ba, liêm chính khoa học: AI không đứng tên tác giả, và việc dùng AI phải khai báo theo yêu cầu của tạp chí.” “Bốn, tay nghề.” [Dừng] “Một nghiên cứu quan sát ở nội soi đại tràng tại Ba Lan, đăng năm 2025: ở các ca làm không có AI, tỷ lệ phát hiện u tuyến giảm từ 28,4 xuống 22,4 phần trăm sau khi trung tâm đưa AI vào dùng. Nghiên cứu này không chứng minh nhân quả và không suy thẳng sang phẫu thuật. Em nêu ra như một câu hỏi: dùng công cụ lâu dài, mình có còn tự luyện phần kỹ năng cốt lõi không?”</aside>
+
+</div>
+</section>
+<section id="act" data-background-color="#EEF2F4">
+<div class="frame" style="background:#EEF2F4;color:#13233A;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:28px">
+
+<p style="font-size:28px;font-weight:700;color:#C8323C;letter-spacing:3px;text-transform:uppercase">Đề xuất</p>
+<h2 style="font-size:64px;font-weight:800;line-height:1.15">Bắt đầu từ đâu, ngay tuần sau</h2>
+<div style="flex:1;display:flex;flex-direction:row;gap:24px;align-items:stretch">
+<div style="flex:1;display:flex;flex-direction:column;gap:18px;background:#FCFCFA;padding:36px;border:1px solid #D8DEE4;border-radius:24px">
+<div style="display:flex;flex-direction:row;gap:14px;align-items:center"><h3 style="font-size:36px;font-weight:800;line-height:1.2;color:#13233A">Mỗi bác sĩ</h3></div>
+<p style="font-size:28px;color:#13233A;line-height:1.45"><b>1.</b> Chọn một việc mình làm lặp lại mỗi tuần.</p>
+<p style="font-size:28px;color:#13233A;line-height:1.45"><b>2.</b> Viết ra cách kiểm trước khi giao cho AI.</p>
+<p style="font-size:28px;color:#13233A;line-height:1.45"><b>3.</b> Thử với dữ liệu giả hoặc đã ẩn danh.</p>
+<p style="font-size:28px;color:#13233A;line-height:1.45"><b>4.</b> Ghi lại một lần AI sai.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:18px;background:#13233A;padding:36px;border-radius:24px">
+<div style="display:flex;flex-direction:row;gap:14px;align-items:center"><h3 style="font-size:36px;font-weight:800;line-height:1.2;color:#F7F5F0">Khoa và bệnh viện</h3></div>
+<p style="font-size:28px;color:#F7F5F0;line-height:1.45"><b>1.</b> Nói rõ nền tảng nào được dùng, với loại dữ liệu nào.</p>
+<p style="font-size:28px;color:#F7F5F0;line-height:1.45"><b>2.</b> Mỗi khoa thử một việc, ghi thời gian tiết kiệm và lỗi gặp phải.</p>
+<p style="font-size:28px;color:#F7F5F0;line-height:1.45"><b>3.</b> Mọi sản phẩm có AI tham gia đều có người kiểm ký tên.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1200px;font-size:24px;color:#6B7280">ThS.BS Nguyễn Văn Tú · Từ hỏi AI đến giao việc cho AI</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;color:#6B7280;text-align:right">22</p>
+<aside class="notes">“Em xin kết bằng việc làm được ngay, chia hai phía.” “Với mỗi bác sĩ, bốn bước. Chọn một việc mình làm lặp lại mỗi tuần; đừng bắt đầu bằng việc khó nhất. Viết ra cách kiểm trước khi giao cho AI. Thử với dữ liệu giả hoặc đã ẩn danh. Và ghi lại một lần AI sai; khi mình có lần sai đầu tiên, mình bắt đầu dùng AI một cách tỉnh táo.” “Với khoa và bệnh viện, em xin đề xuất ba việc để quý lãnh đạo cân nhắc. Một, nói rõ nền tảng nào được dùng và với loại dữ liệu nào; hiện nay nhiều người dùng mà không biết ranh giới. Hai, mỗi khoa thử một việc cụ thể, ghi lại thời gian tiết kiệm và lỗi gặp phải, để quyết định bằng số liệu của chính mình. Ba, mọi sản phẩm có AI tham gia đều có một người kiểm ký tên.” “Em chỉ đề xuất; quyết định thuộc về khoa và bệnh viện.”</aside>
+
+</div>
+</section>
+<section id="closing" data-background-color="#13233A" data-transition="zoom">
+<div class="frame" style="background:#13233A;color:#F7F5F0;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;justify-content:center;gap:40px">
+
+<h2 style="font-size:88px;font-weight:800;line-height:1.12;color:#F7F5F0">AI làm nhanh phần việc.<br>Bác sĩ giữ phần chịu trách nhiệm.</h2>
+<p style="font-size:36px;color:#BFD0DC;line-height:1.45">Giao việc cho rõ, và nghiệm thu cho kỹ.</p>
+<p style="font-size:32px;font-weight:600;color:#F7F5F0">Xin cảm ơn · ThS.BS Nguyễn Văn Tú</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1200px;font-size:24px;color:#9FB2C4">ThS.BS Nguyễn Văn Tú · Từ hỏi AI đến giao việc cho AI</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;color:#9FB2C4;text-align:right">23</p>
+<aside class="notes">[Thuộc lòng. Nhìn hội trường, không nhìn màn hình.] “Em xin tóm lại trong hai câu. AI làm nhanh phần việc. Bác sĩ giữ phần chịu trách nhiệm.” [Dừng 3 giây] “Một bác sĩ không biết lập trình hôm nay có thể làm ra công cụ cho chính khoa mình. Điều đó có thật, và quý thầy cô đã thấy. Nhưng thứ làm cho công cụ đó dùng được không phải là AI, mà là kiến thức chuyên môn của người kiểm nó.” [Dừng] “[Lời tri ân theo thành phần hội trường. Nếu có GS.TS.BS Trần Quyết Tiến dự: ‘Em xin chân thành cảm ơn thầy Tiến, người thầy đã dìu dắt em trong ngoại khoa tim mạch.’ Nếu anh muốn, cảm ơn TS.BS Lê Văn Nam và TS.BS Phạm Hữu Minh Nhựt như đã ghi trong phần mềm.]” “Em xin cảm ơn quý thầy cô và quý đồng nghiệp đã lắng nghe. Em rất mong được nghe phản biện.”</aside>
+
+</div>
+</section>
+</div></div>
+<script src="lib/reveal.js"></script>
+<script src="lib/notes/notes.js"></script>
+<script>
+Reveal.initialize({width:1920,height:1080,margin:0,center:false,hash:true,slideNumber:false,transition:'convex',backgroundTransition:'fade',plugins:[RevealNotes]});
+</script>
+</body>
+</html>
